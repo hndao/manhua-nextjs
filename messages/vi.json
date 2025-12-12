@@ -1,0 +1,124 @@
+{
+  "common": {
+    "appName": "Đọc Truyện Tranh",
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "retry": "Thử lại",
+    "cancel": "Hủy",
+    "confirm": "Xác nhận",
+    "save": "Lưu",
+    "delete": "Xóa",
+    "edit": "Sửa",
+    "search": "Tìm kiếm...",
+    "searchPlaceholder": "Tìm truyện, tác giả...",
+    "noResults": "Không tìm thấy kết quả",
+    "loadMore": "Xem thêm",
+    "viewAll": "Xem tất cả"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "rankings": "Bảng xếp hạng",
+    "genres": "Thể loại",
+    "news": "Tin tức",
+    "ipZone": "Khu vực IP",
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất",
+    "profile": "Hồ sơ",
+    "bookmarks": "Đánh dấu",
+    "history": "Lịch sử"
+  },
+  "home": {
+    "banner": "Nổi bật",
+    "editorPicks": "Biên tập viên đề xuất",
+    "hotSerials": "Truyện hot",
+    "dailyUpdates": "Cập nhật hàng ngày",
+    "rankings": "Bảng xếp hạng",
+    "newReleases": "Mới phát hành",
+    "completed": "Đã hoàn thành"
+  },
+  "rankings": {
+    "overall": "Tổng hợp",
+    "male": "Nam",
+    "female": "Nữ",
+    "new": "Mới"
+  },
+  "comic": {
+    "status": "Trạng thái",
+    "author": "Tác giả",
+    "artist": "Họa sĩ",
+    "genre": "Thể loại",
+    "genres": "Thể loại",
+    "type": "Loại",
+    "chapters": "Chương",
+    "views": "Lượt xem",
+    "rating": "Đánh giá",
+    "ratings": "Đánh giá",
+    "description": "Mô tả",
+    "startReading": "Bắt đầu đọc",
+    "continueReading": "Đọc tiếp",
+    "addBookmark": "Thêm vào đánh dấu",
+    "removeBookmark": "Xóa khỏi đánh dấu",
+    "share": "Chia sẻ",
+    "report": "Báo cáo",
+    "latestChapter": "Chương mới nhất",
+    "firstChapter": "Chương đầu"
+  },
+  "status": {
+    "ongoing": "Đang tiến hành",
+    "completed": "Hoàn thành",
+    "hiatus": "Tạm ngưng",
+    "cancelled": "Đã hủy"
+  },
+  "type": {
+    "manga": "Manga",
+    "manhua": "Manhua",
+    "manhwa": "Manhwa",
+    "webtoon": "Webtoon"
+  },
+  "chapter": {
+    "chapter": "Chương",
+    "volume": "Tập",
+    "page": "Trang",
+    "pages": "Trang",
+    "prevChapter": "Chương trước",
+    "nextChapter": "Chương sau",
+    "chapterList": "Danh sách chương",
+    "readingMode": "Chế độ đọc",
+    "brightness": "Độ sáng",
+    "nightMode": "Chế độ ban đêm",
+    "dayMode": "Chế độ ban ngày",
+    "reportIssue": "Báo cáo vấn đề"
+  },
+  "user": {
+    "myBookmarks": "Đánh dấu của tôi",
+    "myHistory": "Lịch sử đọc",
+    "settings": "Cài đặt",
+    "language": "Ngôn ngữ",
+    "theme": "Giao diện"
+  },
+  "footer": {
+    "about": "Về chúng tôi",
+    "contact": "Liên hệ",
+    "terms": "Điều khoản dịch vụ",
+    "privacy": "Chính sách bảo mật",
+    "help": "Trung tâm trợ giúp",
+    "copyright": "© 2025 Đọc Truyện Tranh. Bảo lưu mọi quyền."
+  },
+  "time": {
+    "justNow": "Vừa xong",
+    "minutesAgo": "{minutes} phút trước",
+    "hoursAgo": "{hours} giờ trước",
+    "daysAgo": "{days} ngày trước",
+    "weeksAgo": "{weeks} tuần trước",
+    "monthsAgo": "{months} tháng trước",
+    "yearsAgo": "{years} năm trước"
+  },
+  "error": {
+    "notFound": "Không tìm thấy trang",
+    "serverError": "Lỗi máy chủ",
+    "networkError": "Lỗi mạng. Vui lòng kiểm tra kết nối.",
+    "unauthorized": "Vui lòng đăng nhập để tiếp tục",
+    "forbidden": "Bạn không có quyền truy cập tài nguyên này"
+  }
+}
+

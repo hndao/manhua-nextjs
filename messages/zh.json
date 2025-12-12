@@ -1,0 +1,124 @@
+{
+  "common": {
+    "appName": "漫画阅读器",
+    "loading": "加载中...",
+    "error": "错误",
+    "retry": "重试",
+    "cancel": "取消",
+    "confirm": "确认",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "search": "搜索...",
+    "searchPlaceholder": "搜索漫画、作者...",
+    "noResults": "未找到结果",
+    "loadMore": "加载更多",
+    "viewAll": "查看全部"
+  },
+  "nav": {
+    "home": "首页",
+    "rankings": "排行榜",
+    "genres": "分类",
+    "news": "漫说",
+    "ipZone": "IP专区",
+    "login": "登录",
+    "logout": "退出",
+    "profile": "个人资料",
+    "bookmarks": "书签",
+    "history": "历史记录"
+  },
+  "home": {
+    "banner": "精选",
+    "editorPicks": "编辑推荐",
+    "hotSerials": "热门连载",
+    "dailyUpdates": "每日更新",
+    "rankings": "排行榜",
+    "newReleases": "新作",
+    "completed": "已完结"
+  },
+  "rankings": {
+    "overall": "综合榜",
+    "male": "男生榜",
+    "female": "女生榜",
+    "new": "新作榜"
+  },
+  "comic": {
+    "status": "状态",
+    "author": "作者",
+    "artist": "画师",
+    "genre": "类型",
+    "genres": "类型",
+    "type": "类别",
+    "chapters": "章节",
+    "views": "浏览量",
+    "rating": "评分",
+    "ratings": "评分",
+    "description": "简介",
+    "startReading": "开始阅读",
+    "continueReading": "继续阅读",
+    "addBookmark": "加入书签",
+    "removeBookmark": "移除书签",
+    "share": "分享",
+    "report": "举报",
+    "latestChapter": "最新章节",
+    "firstChapter": "第一章"
+  },
+  "status": {
+    "ongoing": "连载中",
+    "completed": "已完结",
+    "hiatus": "暂停",
+    "cancelled": "已取消"
+  },
+  "type": {
+    "manga": "日漫",
+    "manhua": "国漫",
+    "manhwa": "韩漫",
+    "webtoon": "条漫"
+  },
+  "chapter": {
+    "chapter": "章节",
+    "volume": "卷",
+    "page": "页",
+    "pages": "页",
+    "prevChapter": "上一章",
+    "nextChapter": "下一章",
+    "chapterList": "目录",
+    "readingMode": "阅读模式",
+    "brightness": "亮度",
+    "nightMode": "夜间模式",
+    "dayMode": "日间模式",
+    "reportIssue": "举报"
+  },
+  "user": {
+    "myBookmarks": "我的书签",
+    "myHistory": "阅读历史",
+    "settings": "设置",
+    "language": "语言",
+    "theme": "主题"
+  },
+  "footer": {
+    "about": "关于我们",
+    "contact": "联系我们",
+    "terms": "服务条款",
+    "privacy": "隐私政策",
+    "help": "帮助中心",
+    "copyright": "© 2025 漫画阅读器。保留所有权利。"
+  },
+  "time": {
+    "justNow": "刚刚",
+    "minutesAgo": "{minutes}分钟前",
+    "hoursAgo": "{hours}小时前",
+    "daysAgo": "{days}天前",
+    "weeksAgo": "{weeks}周前",
+    "monthsAgo": "{months}个月前",
+    "yearsAgo": "{years}年前"
+  },
+  "error": {
+    "notFound": "页面未找到",
+    "serverError": "服务器错误",
+    "networkError": "网络错误。请检查您的连接。",
+    "unauthorized": "请登录以继续",
+    "forbidden": "您没有权限访问此资源"
+  }
+}
+

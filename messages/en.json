@@ -1,0 +1,124 @@
+{
+  "common": {
+    "appName": "Manhua Reader",
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search...",
+    "searchPlaceholder": "Search comics, authors...",
+    "noResults": "No results found",
+    "loadMore": "Load More",
+    "viewAll": "View All"
+  },
+  "nav": {
+    "home": "Home",
+    "rankings": "Rankings",
+    "genres": "Genres",
+    "news": "News",
+    "ipZone": "IP Zone",
+    "login": "Login",
+    "logout": "Logout",
+    "profile": "Profile",
+    "bookmarks": "Bookmarks",
+    "history": "History"
+  },
+  "home": {
+    "banner": "Featured",
+    "editorPicks": "Editor's Picks",
+    "hotSerials": "Hot Serials",
+    "dailyUpdates": "Daily Updates",
+    "rankings": "Rankings",
+    "newReleases": "New Releases",
+    "completed": "Completed"
+  },
+  "rankings": {
+    "overall": "Overall",
+    "male": "Male",
+    "female": "Female",
+    "new": "New"
+  },
+  "comic": {
+    "status": "Status",
+    "author": "Author",
+    "artist": "Artist",
+    "genre": "Genre",
+    "genres": "Genres",
+    "type": "Type",
+    "chapters": "Chapters",
+    "views": "Views",
+    "rating": "Rating",
+    "ratings": "Ratings",
+    "description": "Description",
+    "startReading": "Start Reading",
+    "continueReading": "Continue Reading",
+    "addBookmark": "Add to Bookmarks",
+    "removeBookmark": "Remove from Bookmarks",
+    "share": "Share",
+    "report": "Report",
+    "latestChapter": "Latest Chapter",
+    "firstChapter": "First Chapter"
+  },
+  "status": {
+    "ongoing": "Ongoing",
+    "completed": "Completed",
+    "hiatus": "Hiatus",
+    "cancelled": "Cancelled"
+  },
+  "type": {
+    "manga": "Manga",
+    "manhua": "Manhua",
+    "manhwa": "Manhwa",
+    "webtoon": "Webtoon"
+  },
+  "chapter": {
+    "chapter": "Chapter",
+    "volume": "Volume",
+    "page": "Page",
+    "pages": "Pages",
+    "prevChapter": "Previous Chapter",
+    "nextChapter": "Next Chapter",
+    "chapterList": "Chapter List",
+    "readingMode": "Reading Mode",
+    "brightness": "Brightness",
+    "nightMode": "Night Mode",
+    "dayMode": "Day Mode",
+    "reportIssue": "Report Issue"
+  },
+  "user": {
+    "myBookmarks": "My Bookmarks",
+    "myHistory": "My Reading History",
+    "settings": "Settings",
+    "language": "Language",
+    "theme": "Theme"
+  },
+  "footer": {
+    "about": "About Us",
+    "contact": "Contact",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "help": "Help Center",
+    "copyright": "© 2025 Manhua Reader. All rights reserved."
+  },
+  "time": {
+    "justNow": "Just now",
+    "minutesAgo": "{minutes} minutes ago",
+    "hoursAgo": "{hours} hours ago",
+    "daysAgo": "{days} days ago",
+    "weeksAgo": "{weeks} weeks ago",
+    "monthsAgo": "{months} months ago",
+    "yearsAgo": "{years} years ago"
+  },
+  "error": {
+    "notFound": "Page not found",
+    "serverError": "Server error",
+    "networkError": "Network error. Please check your connection.",
+    "unauthorized": "Please login to continue",
+    "forbidden": "You don't have permission to access this resource"
+  }
+}
+
