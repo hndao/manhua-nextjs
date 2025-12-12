@@ -13,7 +13,9 @@
     "searchPlaceholder": "Search comics, authors...",
     "noResults": "No results found",
     "loadMore": "Load More",
-    "viewAll": "View All"
+    "viewAll": "View All",
+    "hot": "HOT",
+    "new": "NEW"
   },
   "nav": {
     "home": "Home",

@@ -1,44 +1,83 @@
-import { Container } from '@/components/layout';
+import { getComics, getFeaturedComics, getHotComics } from '@/lib/api/comics';
+import Banner from '@/components/landing/Banner';
+import EditorPicks from '@/components/landing/EditorPicks';
+import HotSerials from '@/components/landing/HotSerials';
+import DailyUpdates from '@/components/landing/DailyUpdates';
+import Rankings from '@/components/landing/Rankings';
 
-export default function Home() {
-  return (
-    <div className="bg-gray-50 py-8">
-      <Container>
-        <div className="text-center py-20">
-          <h1 className="text-4xl font-bold mb-4">
-            欢迎来到漫画平台 / Welcome to Manhua Platform
+export default async function Home() {
+  try {
+    // Fetch data from API in parallel
+    const [
+      featuredComics,
+      editorPicksData,
+      hotComics,
+      dailyUpdates,
+      overallRankings,
+      maleRankings,
+      femaleRankings,
+      newComics,
+    ] = await Promise.all([
+      getFeaturedComics({ limit: 5 }),
+      getComics({ featured: true, limit: 6 }),
+      getHotComics({ limit: 12 }),
+      getComics({ sort: 'updated_at', order: 'desc', limit: 10 }),
+      getComics({ sort: 'rating', order: 'desc', limit: 5 }),
+      getComics({ sort: 'rating', order: 'desc', limit: 5, target_audience: 'male' }),
+      getComics({ sort: 'rating', order: 'desc', limit: 5, target_audience: 'female' }),
+      getComics({ sort: 'created_at', order: 'desc', limit: 5 }),
+    ]);
+
+    return (
+      <div className="bg-white">
+        {/* Banner Section */}
+        <Banner comics={featuredComics.data} />
+
+        {/* Editor Picks Section */}
+        <EditorPicks comics={editorPicksData.data} />
+
+        {/* Hot Serials Section */}
+        <HotSerials comics={hotComics.data} />
+
+        {/* Daily Updates Section */}
+        <DailyUpdates comics={dailyUpdates.data} />
+
+        {/* Rankings Section */}
+        <Rankings
+          overall={overallRankings.data}
+          male={maleRankings.data}
+          female={femaleRankings.data}
+          newComics={newComics.data}
+        />
+      </div>
+    );
+  } catch (error) {
+    console.error('Error fetching data:', error);
+
+    // Show error message when API is not available
+    return (
+      <div className="bg-white min-h-screen flex items-center justify-center">
+        <div className="text-center px-4">
+          <div className="mb-6">
+            <svg className="w-16 h-16 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+            Unable to Connect to API
           </h1>
-          <p className="text-lg text-gray-600 mb-8">
-            Layout system is working! Header and Footer are now visible.
+          <p className="text-gray-600 mb-6">
+            Please make sure the Laravel backend is running at <code className="bg-gray-100 px-2 py-1 rounded">http://127.0.0.1:8000</code>
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h2 className="text-xl font-semibold mb-2">✅ Task 1</h2>
-              <p className="text-gray-600">Project structure created</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h2 className="text-xl font-semibold mb-2">✅ Task 2</h2>
-              <p className="text-gray-600">Tailwind CSS configured</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h2 className="text-xl font-semibold mb-2">✅ Task 3</h2>
-              <p className="text-gray-600">Layout system built</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h2 className="text-xl font-semibold mb-2">✅ Task 4</h2>
-              <p className="text-gray-600">Mock data created</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h2 className="text-xl font-semibold mb-2">🔄 Task 5</h2>
-              <p className="text-gray-600">Implementing pages...</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h2 className="text-xl font-semibold mb-2">⏳ Task 6</h2>
-              <p className="text-gray-600">Testing responsive design</p>
-            </div>
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-left max-w-md mx-auto">
+            <p className="text-sm text-blue-900 font-medium mb-2">To start the Laravel backend:</p>
+            <code className="block bg-blue-900 text-blue-100 px-3 py-2 rounded text-sm">
+              cd ../manhua-laravel<br />
+              php artisan serve
+            </code>
           </div>
         </div>
-      </Container>
-    </div>
-  );
+      </div>
+    );
+  }
 }

@@ -13,7 +13,9 @@
     "searchPlaceholder": "Tìm truyện, tác giả...",
     "noResults": "Không tìm thấy kết quả",
     "loadMore": "Xem thêm",
-    "viewAll": "Xem tất cả"
+    "viewAll": "Xem tất cả",
+    "hot": "HOT",
+    "new": "MỚI"
   },
   "nav": {
     "home": "Trang chủ",

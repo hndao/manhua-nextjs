@@ -13,7 +13,9 @@
     "searchPlaceholder": "搜索漫画、作者...",
     "noResults": "未找到结果",
     "loadMore": "加载更多",
-    "viewAll": "查看全部"
+    "viewAll": "查看全部",
+    "hot": "热门",
+    "new": "新"
   },
   "nav": {
     "home": "首页",
