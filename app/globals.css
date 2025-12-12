@@ -6,10 +6,27 @@
 }
 
 @theme inline {
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Custom Breakpoints for Responsive Design */
+  --breakpoint-mobile: 375px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1440px;
+
+  /* Container Max Widths */
+  --container-mobile: 375px;
+  --container-tablet: 768px;
+  --container-desktop: 1440px;
+
+  /* Spacing */
+  --spacing-section: 2rem;
+  --spacing-card: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +40,42 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Utility Classes */
+.container-responsive {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-responsive {
+    max-width: 768px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container-responsive {
+    max-width: 1440px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
 }
