@@ -1,11 +1,18 @@
+'use client';
+
 import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function Footer() {
+  const t = useTranslations();
+  const locale = useLocale();
+
   const footerLinks = [
-    { label: '关于我们', labelEn: 'About Us', href: '/about' },
-    { label: '联系方式', labelEn: 'Contact', href: '/contact' },
-    { label: '使用条款', labelEn: 'Terms', href: '/terms' },
-    { label: '隐私政策', labelEn: 'Privacy', href: '/privacy' },
+    { labelKey: 'footer.about', href: '/about' },
+    { labelKey: 'footer.contact', href: '/contact' },
+    { labelKey: 'footer.terms', href: '/terms' },
+    { labelKey: 'footer.privacy', href: '/privacy' },
+    { labelKey: 'footer.help', href: '/help' },
   ];
 
   return (
@@ -20,8 +27,8 @@ export default function Footer() {
               <div className="flex flex-wrap gap-4 text-xs text-gray-600">
                 {footerLinks.map((link, index) => (
                   <span key={link.href}>
-                    <Link href={link.href} className="hover:text-gray-900">
-                      {link.label}
+                    <Link href={`/${locale}${link.href}`} className="hover:text-gray-900">
+                      {t(link.labelKey)}
                     </Link>
                     {index < footerLinks.length - 1 && (
                       <span className="ml-4">|</span>
@@ -30,7 +37,7 @@ export default function Footer() {
                 ))}
               </div>
               <div className="mt-6 text-xs text-gray-500">
-                © 2025 Manhua Platform. All rights reserved.
+                {t('footer.copyright')}
               </div>
             </div>
 
