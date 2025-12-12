@@ -60,11 +60,11 @@ export default function ComicCard({
             </div>
           )}
 
-          {/* Latest Chapter Overlay */}
-          {comic.latest_chapter && (
+          {/* Chapter Count Overlay */}
+          {comic.chapters_count > 0 && (
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-2">
               <p className="text-white text-xs truncate">
-                {comic.latest_chapter.title}
+                {comic.chapters_count} {t('comic.chapters')}
               </p>
             </div>
           )}
@@ -77,28 +77,28 @@ export default function ComicCard({
           </h3>
           
           {/* Author */}
-          {comic.author && (
+          {comic.authors && comic.authors.length > 0 && (
             <p className="text-xs text-gray-500 mt-1 truncate">
-              {comic.author.name}
+              {comic.authors[0].name}
             </p>
           )}
 
           {/* Rating */}
-          {showRating && comic.rating && (
+          {showRating && comic.average_rating > 0 && (
             <div className="flex items-center mt-1">
               <div className="flex items-center">
                 <svg className="w-3 h-3 text-yellow-400 fill-current" viewBox="0 0 20 20">
                   <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                 </svg>
-                <span className="text-xs text-gray-600 ml-1">{comic.rating.toFixed(1)}</span>
+                <span className="text-xs text-gray-600 ml-1">{comic.average_rating.toFixed(1)}</span>
               </div>
             </div>
           )}
 
           {/* Views */}
-          {comic.views_count && (
+          {comic.total_views > 0 && (
             <p className="text-xs text-gray-400 mt-1">
-              {t('comic.views', { count: comic.views_count.toLocaleString() })}
+              {comic.total_views.toLocaleString()} {t('comic.views')}
             </p>
           )}
         </div>

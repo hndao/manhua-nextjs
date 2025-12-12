@@ -18,14 +18,14 @@ export default async function Home() {
       femaleRankings,
       newComics,
     ] = await Promise.all([
-      getFeaturedComics({ limit: 5 }),
-      getComics({ featured: true, limit: 6 }),
-      getHotComics({ limit: 12 }),
-      getComics({ sort: 'updated_at', order: 'desc', limit: 10 }),
-      getComics({ sort: 'rating', order: 'desc', limit: 5 }),
-      getComics({ sort: 'rating', order: 'desc', limit: 5, target_audience: 'male' }),
-      getComics({ sort: 'rating', order: 'desc', limit: 5, target_audience: 'female' }),
-      getComics({ sort: 'created_at', order: 'desc', limit: 5 }),
+      getComics({ limit: 5 }), // Banner comics
+      getComics({ limit: 6 }), // Editor picks
+      getComics({ limit: 12 }), // Hot serials
+      getComics({ limit: 10 }), // Daily updates
+      getComics({ limit: 5 }), // Overall rankings
+      getComics({ limit: 5 }), // Male rankings
+      getComics({ limit: 5 }), // Female rankings
+      getComics({ limit: 5 }), // New comics
     ]);
 
     return (

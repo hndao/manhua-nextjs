@@ -62,19 +62,12 @@ export default function DailyUpdates({ comics }: DailyUpdatesProps) {
                   {comic.title}
                 </h3>
                 
-                {/* Latest Chapters */}
-                {comic.latest_chapter && (
-                  <div className="mt-2 space-y-1">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs md:text-sm text-gray-600 truncate flex-1">
-                        {comic.latest_chapter.title}
-                      </span>
-                      <span className="text-xs text-gray-400 ml-2 flex-shrink-0">
-                        {new Date(comic.latest_chapter.published_at).toLocaleDateString()}
-                      </span>
-                    </div>
-                  </div>
-                )}
+                {/* Updated Date */}
+                <div className="mt-2">
+                  <span className="text-xs text-gray-400">
+                    {t('time.updated')} {new Date(comic.updated_at).toLocaleDateString()}
+                  </span>
+                </div>
 
                 {/* Genres */}
                 {comic.genres && comic.genres.length > 0 && (
@@ -92,16 +85,16 @@ export default function DailyUpdates({ comics }: DailyUpdatesProps) {
 
                 {/* Stats */}
                 <div className="mt-2 flex items-center gap-3 text-xs text-gray-500">
-                  {comic.views_count && (
+                  {comic.total_views > 0 && (
                     <span className="flex items-center gap-1">
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
-                      {comic.views_count.toLocaleString()}
+                      {comic.total_views.toLocaleString()}
                     </span>
                   )}
-                  {comic.chapters_count && (
+                  {comic.chapters_count > 0 && (
                     <span>{comic.chapters_count} {t('comic.chapters')}</span>
                   )}
                 </div>

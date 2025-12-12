@@ -66,10 +66,26 @@ export interface Comic {
 
 export interface PaginatedResponse<T> {
   data: T[];
-  total: number;
-  per_page: number;
-  current_page: number;
-  last_page: number;
+  links?: {
+    first: string;
+    last: string;
+    prev: string | null;
+    next: string | null;
+  };
+  meta?: {
+    current_page: number;
+    from: number | null;
+    last_page: number;
+    path: string;
+    per_page: number;
+    to: number | null;
+    total: number;
+  };
+  // Legacy fields for backward compatibility
+  total?: number;
+  per_page?: number;
+  current_page?: number;
+  last_page?: number;
 }
 
 export interface ApiResponse<T> {

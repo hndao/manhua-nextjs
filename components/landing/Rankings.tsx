@@ -115,26 +115,26 @@ export default function Rankings({ overall, male, female, newComics }: RankingsP
                 <h3 className="text-sm md:text-base font-medium text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-1">
                   {comic.title}
                 </h3>
-                {comic.author && (
+                {comic.authors && comic.authors.length > 0 && (
                   <p className="text-xs md:text-sm text-gray-500 mt-1 truncate">
-                    {comic.author.name}
+                    {comic.authors[0].name}
                   </p>
                 )}
-                {comic.latest_chapter && (
+                {comic.chapters_count > 0 && (
                   <p className="text-xs text-gray-400 mt-1 truncate">
-                    {comic.latest_chapter.title}
+                    {comic.chapters_count} {t('comic.chapters')}
                   </p>
                 )}
               </div>
 
               {/* Rating */}
-              {comic.rating && (
+              {comic.average_rating > 0 && (
                 <div className="flex-shrink-0 flex items-center gap-1">
                   <svg className="w-4 h-4 md:w-5 md:h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
                     <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                   </svg>
                   <span className="text-sm md:text-base font-medium text-gray-700">
-                    {comic.rating.toFixed(1)}
+                    {comic.average_rating.toFixed(1)}
                   </span>
                 </div>
               )}
