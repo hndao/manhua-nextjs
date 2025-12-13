@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { Comic } from '@/types/comic';
-import { getImageUrl } from '@/lib/utils';
+import { getPlaceholderImage } from '@/lib/utils/image';
 
 interface ComicCardProps {
   comic: Comic;
@@ -39,7 +39,7 @@ export default function ComicCard({
         {/* Comic Cover */}
         <div className={`${sizeClasses[size]} relative overflow-hidden rounded-lg bg-gray-100 flex-shrink-0`}>
           <Image
-            src={getImageUrl(comic.cover_image)}
+            src={comic.cover_image || getPlaceholderImage()}
             alt={comic.title}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-105"

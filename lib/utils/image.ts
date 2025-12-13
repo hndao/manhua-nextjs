@@ -6,12 +6,19 @@ const LARAVEL_BASE_URL = process.env.NEXT_PUBLIC_API_URL?.replace('/api/v1', '')
 const IMAGE_CDN_URL = process.env.NEXT_PUBLIC_IMAGE_CDN_URL;
 
 /**
+ * Get placeholder image URL
+ */
+export function getPlaceholderImage(width: number = 400, height: number = 600): string {
+  return `https://placehold.co/${width}x${height}/e5e7eb/9ca3af?text=No+Image`;
+}
+
+/**
  * Get full image URL from relative path
  * Handles both Laravel storage paths and CDN URLs
  */
 export function getImageUrl(path: string | null | undefined): string {
   if (!path) {
-    return '/placeholder-comic.jpg'; // You can add a placeholder image
+    return getPlaceholderImage();
   }
 
   // If already a full URL, return as is
@@ -25,7 +32,17 @@ export function getImageUrl(path: string | null | undefined): string {
   }
 
   // Otherwise use Laravel storage URL
-  return `${LARAVEL_BASE_URL}/storage/${path}`;
+  // Remove leading slash if present to avoid double slashes
+  const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+  return `${LARAVEL_BASE_URL}/${cleanPath}`;
+}
+
+/**
+ * Handle image error by setting a placeholder
+ */
+export function handleImageError(event: React.SyntheticEvent<HTMLImageElement, Event>) {
+  const img = event.currentTarget;
+  img.src = getPlaceholderImage();
 }
 
 /**

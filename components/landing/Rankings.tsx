@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 import { Comic } from '@/types/comic';
-import { getImageUrl } from '@/lib/utils';
+import { getPlaceholderImage } from '@/lib/utils/image';
 
 interface RankingsProps {
   overall: Comic[];
@@ -102,7 +102,7 @@ export default function Rankings({ overall, male, female, newComics }: RankingsP
               {/* Thumbnail */}
               <div className="relative w-12 h-16 md:w-14 md:h-20 flex-shrink-0 rounded overflow-hidden bg-gray-100">
                 <Image
-                  src={getImageUrl(comic.cover_image)}
+                  src={comic.cover_image || getPlaceholderImage()}
                   alt={comic.title}
                   fill
                   className="object-cover"

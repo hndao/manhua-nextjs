@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { Comic } from '@/types/comic';
-import { getImageUrl } from '@/lib/utils';
+import { getPlaceholderImage } from '@/lib/utils/image';
 
 interface BannerProps {
   comics: Comic[];
@@ -65,7 +65,7 @@ export default function Banner({ comics, autoPlayInterval = 5000 }: BannerProps)
               <Link href={`/${locale}/comic/${comic.slug}`}>
                 <div className="relative h-full w-full">
                   <Image
-                    src={getImageUrl(comic.banner_image || comic.cover_image)}
+                    src={comic.banner_image || comic.cover_image || getPlaceholderImage(1440, 320)}
                     alt={comic.title}
                     fill
                     className="object-cover"
