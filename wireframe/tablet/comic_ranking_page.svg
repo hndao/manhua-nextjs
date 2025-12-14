@@ -1,0 +1,72 @@
+<svg width="768" height="1500" viewBox="0 0 768 1500" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+    .label { font-family: Arial, sans-serif; font-size: 13px; fill: #555; }
+    .small { font-family: Arial, sans-serif; font-size: 12px; fill: #777; }
+    .rank { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #FF7A00; }
+  </style>
+
+  <rect width="768" height="1500" fill="#F7F7F7"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="768" height="64" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <text x="24" y="40" class="small">← 返回</text>
+  <text x="384" y="40" text-anchor="middle" class="title">排行榜 / Ranking</text>
+
+  <!-- Tabs -->
+  <rect x="0" y="64" width="768" height="56" fill="#FFFFFF" stroke="#DDDDDD"/>
+
+  <rect x="24" y="78" width="96" height="32" fill="#FFFFFF" stroke="#333333" rx="16"/>
+  <text x="48" y="100" class="small">综合榜</text>
+
+  <rect x="132" y="78" width="96" height="32" fill="#F2F2F2" stroke="#CCCCCC" rx="16"/>
+  <text x="156" y="100" class="small">男生榜</text>
+
+  <rect x="240" y="78" width="96" height="32" fill="#F2F2F2" stroke="#CCCCCC" rx="16"/>
+  <text x="264" y="100" class="small">女生榜</text>
+
+  <rect x="348" y="78" width="96" height="32" fill="#F2F2F2" stroke="#CCCCCC" rx="16"/>
+  <text x="372" y="100" class="small">新作榜</text>
+
+  <!-- Filter row -->
+  <rect x="0" y="120" width="768" height="44" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <text x="24" y="148" class="small">周期: 本周 ▼</text>
+  <text x="620" y="148" class="small">排序: 人气 ▼</text>
+
+  <!-- Ranking content -->
+  <rect x="24" y="180" width="720" height="1240" fill="#FFFFFF" stroke="#DDDDDD" rx="8"/>
+
+  <!-- Left column -->
+  <!-- Item 1 -->
+  <rect x="40" y="200" width="320" height="96" fill="#FFFFFF" stroke="#EEEEEE" rx="8"/>
+  <text x="52" y="262" class="rank">1</text>
+  <rect x="84" y="212" width="72" height="84" fill="#FFFFFF" stroke="#CCCCCC" rx="4"/>
+  <text x="168" y="232" class="label">漫画标题 Title 1</text>
+  <text x="168" y="252" class="small">人气 1.2亿 · 128 话</text>
+
+  <!-- Item 2 -->
+  <rect x="40" y="312" width="320" height="96" fill="#FFFFFF" stroke="#EEEEEE" rx="8"/>
+  <text x="52" y="374" class="rank">2</text>
+  <rect x="84" y="324" width="72" height="84" fill="#FFFFFF" stroke="#CCCCCC" rx="4"/>
+  <text x="168" y="344" class="label">漫画标题 Title 2</text>
+  <text x="168" y="364" class="small">人气 9800万 · 96 话</text>
+
+  <!-- Right column -->
+  <!-- Item 3 -->
+  <rect x="384" y="200" width="320" height="96" fill="#FFFFFF" stroke="#EEEEEE" rx="8"/>
+  <text x="396" y="262" class="rank">3</text>
+  <rect x="428" y="212" width="72" height="84" fill="#FFFFFF" stroke="#CCCCCC" rx="4"/>
+  <text x="512" y="232" class="label">漫画标题 Title 3</text>
+  <text x="512" y="252" class="small">人气 8500万 · 110 话</text>
+
+  <!-- Item 4 -->
+  <rect x="384" y="312" width="320" height="96" fill="#FFFFFF" stroke="#EEEEEE" rx="8"/>
+  <text x="396" y="374" class="rank">4</text>
+  <rect x="428" y="324" width="72" height="84" fill="#FFFFFF" stroke="#CCCCCC" rx="4"/>
+  <text x="512" y="344" class="label">漫画标题 Title 4</text>
+  <text x="512" y="364" class="small">人气 7900万 · 88 话</text>
+
+  <!-- Load more -->
+  <rect x="294" y="1380" width="180" height="40" fill="#FFFFFF" stroke="#333333" rx="20"/>
+  <text x="384" y="1406" text-anchor="middle" class="small">加载更多</text>
+</svg>

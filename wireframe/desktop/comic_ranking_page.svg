@@ -1,0 +1,227 @@
+<svg width="1440" height="1900" viewBox="0 0 1440 1900" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .h1 { font-family: Arial, sans-serif; font-size: 22px; font-weight: bold; fill: #333; }
+    .h2 { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #333; }
+    .label { font-family: Arial, sans-serif; font-size: 13px; fill: #555; }
+    .small { font-family: Arial, sans-serif; font-size: 12px; fill: #777; }
+    .rank { font-family: Arial, sans-serif; font-size: 22px; font-weight: bold; fill: #FF7A00; }
+    .muted { fill: #F5F5F5; stroke: #CCCCCC; }
+    .active { fill: #FFFFFF; stroke: #333333; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1440" height="1900" fill="#F7F7F7"/>
+
+  <!-- HEADER (same system as ac.qq.com) -->
+  <g id="header">
+    <rect x="0" y="0" width="1440" height="80" fill="#FFFFFF" stroke="#DDDDDD"/>
+    <!-- Logo -->
+    <rect x="40" y="20" width="110" height="40" fill="#FFFFFF" stroke="#BBBBBB"/>
+    <text x="55" y="46" class="small">LOGO</text>
+
+    <!-- Nav -->
+    <text x="190" y="50" class="label">首页</text>
+    <text x="240" y="50" class="label">排行榜</text>
+    <text x="310" y="50" class="label">分类</text>
+    <text x="360" y="50" class="label">漫说</text>
+    <text x="410" y="50" class="label">IP专区</text>
+
+    <!-- Search -->
+    <rect x="930" y="20" width="320" height="40" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+    <text x="945" y="46" class="small">Search...</text>
+
+    <!-- Login -->
+    <rect x="1270" y="20" width="100" height="40" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+    <text x="1302" y="46" class="small">登录</text>
+  </g>
+
+  <!-- Page Title -->
+  <text x="40" y="130" class="h1">排行榜 / Ranking</text>
+
+  <!-- Tabs Row -->
+  <g id="tabs">
+    <rect x="40" y="150" width="1360" height="56" fill="#FFFFFF" stroke="#DDDDDD" rx="10"/>
+    <!-- Tabs -->
+    <rect x="60" y="164" width="110" height="32" class="active" rx="16"/>
+    <text x="92" y="185" class="small">综合榜</text>
+
+    <rect x="180" y="164" width="110" height="32" class="muted" rx="16"/>
+    <text x="212" y="185" class="small">男生榜</text>
+
+    <rect x="300" y="164" width="110" height="32" class="muted" rx="16"/>
+    <text x="332" y="185" class="small">女生榜</text>
+
+    <rect x="420" y="164" width="110" height="32" class="muted" rx="16"/>
+    <text x="452" y="185" class="small">新作榜</text>
+
+    <rect x="540" y="164" width="110" height="32" class="muted" rx="16"/>
+    <text x="572" y="185" class="small">完结榜</text>
+
+    <rect x="660" y="164" width="110" height="32" class="muted" rx="16"/>
+    <text x="692" y="185" class="small">人气榜</text>
+  </g>
+
+  <!-- Filter Bar -->
+  <g id="filters">
+    <rect x="40" y="220" width="1360" height="56" fill="#FFFFFF" stroke="#DDDDDD" rx="10"/>
+
+    <!-- Period dropdown -->
+    <rect x="60" y="234" width="140" height="28" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+    <text x="75" y="253" class="small">周期: 本周 ▼</text>
+
+    <!-- Sort dropdown -->
+    <rect x="210" y="234" width="160" height="28" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+    <text x="225" y="253" class="small">排序: 人气 ▼</text>
+
+    <!-- Category dropdown -->
+    <rect x="380" y="234" width="200" height="28" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+    <text x="395" y="253" class="small">题材: 全部 ▼</text>
+
+    <!-- Toggle pills -->
+    <rect x="1040" y="234" width="120" height="28" fill="#FFFFFF" stroke="#333" rx="14"/>
+    <text x="1067" y="253" class="small">只看连载</text>
+
+    <rect x="1170" y="234" width="100" height="28" fill="#F5F5F5" stroke="#CCCCCC" rx="14"/>
+    <text x="1197" y="253" class="small">只看完结</text>
+
+    <!-- Search within ranking -->
+    <rect x="1280" y="234" width="100" height="28" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+    <text x="1290" y="253" class="small">筛选</text>
+  </g>
+
+  <!-- CONTENT AREA -->
+  <!-- 3-column layout: Left (Top 1-10), Middle (More list/grid), Right (Sidebar) -->
+  <g id="content">
+    <!-- Left column: Top 10 -->
+    <rect x="40" y="300" width="420" height="1500" fill="#FFFFFF" stroke="#DDDDDD" rx="10"/>
+    <text x="60" y="335" class="h2">Top 10</text>
+
+    <!-- Top item 1 (highlight) -->
+    <rect x="60" y="360" width="380" height="120" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+    <text x="75" y="435" class="rank">1</text>
+    <rect x="110" y="375" width="80" height="100" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+    <text x="205" y="400" class="label">Title 1</text>
+    <text x="205" y="420" class="small">人气 1.2亿 · 128 话</text>
+    <text x="205" y="440" class="small">热血 · 冒险 · 连载</text>
+
+    <!-- Items 2-5 -->
+    <rect x="60" y="490" width="380" height="92" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+    <text x="75" y="547" class="rank">2</text>
+    <rect x="110" y="500" width="64" height="72" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+    <text x="185" y="525" class="label">Title 2</text>
+    <text x="185" y="545" class="small">人气 9800万 · 96 话</text>
+
+    <rect x="60" y="590" width="380" height="92" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+    <text x="75" y="647" class="rank">3</text>
+    <rect x="110" y="600" width="64" height="72" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+    <text x="185" y="625" class="label">Title 3</text>
+    <text x="185" y="645" class="small">人气 8500万 · 110 话</text>
+
+    <rect x="60" y="690" width="380" height="92" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+    <text x="75" y="747" class="rank">4</text>
+    <rect x="110" y="700" width="64" height="72" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+    <text x="185" y="725" class="label">Title 4</text>
+    <text x="185" y="745" class="small">人气 7900万 · 88 话</text>
+
+    <rect x="60" y="790" width="380" height="92" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+    <text x="75" y="847" class="rank">5</text>
+    <rect x="110" y="800" width="64" height="72" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+    <text x="185" y="825" class="label">Title 5</text>
+    <text x="185" y="845" class="small">人气 7200万 · 75 话</text>
+
+    <!-- Hint for rest -->
+    <text x="60" y="910" class="small">... Items 6–10 ...</text>
+
+    <!-- Middle column: Extended ranking list/grid -->
+    <rect x="480" y="300" width="640" height="1500" fill="#FFFFFF" stroke="#DDDDDD" rx="10"/>
+    <text x="500" y="335" class="h2">更多榜单 / More</text>
+
+    <!-- View switch -->
+    <rect x="900" y="314" width="90" height="28" fill="#FFFFFF" stroke="#333" rx="6"/>
+    <text x="922" y="333" class="small">列表</text>
+    <rect x="995" y="314" width="90" height="28" fill="#F5F5F5" stroke="#CCCCCC" rx="6"/>
+    <text x="1017" y="333" class="small">网格</text>
+
+    <!-- List rows (10 rows placeholders) -->
+    <!-- Row template: rank | thumbnail | title | meta | action -->
+    <g id="rows">
+      <!-- Row 11 -->
+      <rect x="500" y="360" width="600" height="84" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+      <text x="520" y="410" class="label">11</text>
+      <rect x="555" y="372" width="60" height="70" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+      <text x="625" y="395" class="label">Title 11</text>
+      <text x="625" y="415" class="small">人气 5200万 · 60 话 · 都市</text>
+      <rect x="1020" y="385" width="70" height="28" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+      <text x="1035" y="404" class="small">详情</text>
+
+      <!-- Row 12 -->
+      <rect x="500" y="454" width="600" height="84" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+      <text x="520" y="504" class="label">12</text>
+      <rect x="555" y="466" width="60" height="70" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+      <text x="625" y="489" class="label">Title 12</text>
+      <text x="625" y="509" class="small">人气 5000万 · 58 话 · 恋爱</text>
+      <rect x="1020" y="479" width="70" height="28" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+      <text x="1035" y="498" class="small">详情</text>
+
+      <!-- Row 13 -->
+      <rect x="500" y="548" width="600" height="84" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+      <text x="520" y="598" class="label">13</text>
+      <rect x="555" y="560" width="60" height="70" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+      <text x="625" y="583" class="label">Title 13</text>
+      <text x="625" y="603" class="small">人气 4800万 · 55 话 · 奇幻</text>
+      <rect x="1020" y="573" width="70" height="28" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+      <text x="1035" y="592" class="small">详情</text>
+
+      <text x="500" y="700" class="small">... more rows ...</text>
+    </g>
+
+    <!-- Pagination / Load more -->
+    <rect x="690" y="1720" width="220" height="44" fill="#FFFFFF" stroke="#333333" rx="22"/>
+    <text x="800" y="1748" text-anchor="middle" class="small">加载更多 / Load more</text>
+
+    <!-- Right column: Sidebar -->
+    <rect x="1140" y="300" width="260" height="1500" fill="#FFFFFF" stroke="#DDDDDD" rx="10"/>
+    <text x="1160" y="335" class="h2">侧边栏</text>
+
+    <!-- Sidebar module: Trending tags -->
+    <rect x="1160" y="360" width="220" height="180" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+    <text x="1175" y="390" class="label">热门题材 / Hot Tags</text>
+    <rect x="1175" y="405" width="70" height="24" fill="#F5F5F5" stroke="#CCCCCC" rx="12"/>
+    <text x="1190" y="422" class="small">热血</text>
+    <rect x="1250" y="405" width="70" height="24" fill="#F5F5F5" stroke="#CCCCCC" rx="12"/>
+    <text x="1265" y="422" class="small">恋爱</text>
+    <rect x="1175" y="435" width="70" height="24" fill="#F5F5F5" stroke="#CCCCCC" rx="12"/>
+    <text x="1190" y="452" class="small">都市</text>
+    <rect x="1250" y="435" width="70" height="24" fill="#F5F5F5" stroke="#CCCCCC" rx="12"/>
+    <text x="1265" y="452" class="small">奇幻</text>
+
+    <!-- Sidebar module: Recently updated -->
+    <rect x="1160" y="560" width="220" height="320" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+    <text x="1175" y="590" class="label">近期更新 / Recent</text>
+
+    <rect x="1175" y="610" width="50" height="70" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+    <text x="1235" y="630" class="small">Comic A</text>
+    <text x="1235" y="650" class="small">更新至 12</text>
+
+    <rect x="1175" y="690" width="50" height="70" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+    <text x="1235" y="710" class="small">Comic B</text>
+    <text x="1235" y="730" class="small">更新至 66</text>
+
+    <rect x="1175" y="770" width="50" height="70" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+    <text x="1235" y="790" class="small">Comic C</text>
+    <text x="1235" y="810" class="small">更新至 30</text>
+
+    <!-- Sidebar module: App QR -->
+    <rect x="1160" y="900" width="220" height="200" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+    <text x="1175" y="930" class="label">APP 下载</text>
+    <rect x="1225" y="950" width="90" height="90" fill="#FFFFFF" stroke="#CCCCCC"/>
+    <text x="1247" y="1002" class="small">QR</text>
+    <text x="1175" y="1060" class="small">扫码下载客户端</text>
+  </g>
+
+  <!-- FOOTER -->
+  <g id="footer">
+    <rect x="0" y="1840" width="1440" height="60" fill="#FFFFFF" stroke="#DDDDDD"/>
+    <text x="40" y="1875" class="small">关于我们 | 使用条款 | 隐私政策 | 联系方式</text>
+  </g>
+</svg>

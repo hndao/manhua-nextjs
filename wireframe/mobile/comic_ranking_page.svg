@@ -1,0 +1,63 @@
+<svg width="375" height="1500" viewBox="0 0 375 1500" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #333; }
+    .label { font-family: Arial, sans-serif; font-size: 12px; fill: #555; }
+    .small { font-family: Arial, sans-serif; font-size: 11px; fill: #777; }
+    .rank { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #FF7A00; }
+  </style>
+
+  <rect width="375" height="1500" fill="#F7F7F7"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="375" height="56" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <text x="12" y="34" class="small">←</text>
+  <text x="188" y="34" text-anchor="middle" class="title">排行榜 / Ranking</text>
+
+  <!-- Tabs (scrollable) -->
+  <rect x="0" y="56" width="375" height="48" fill="#FFFFFF" stroke="#DDDDDD"/>
+
+  <rect x="12" y="66" width="72" height="28" fill="#FFFFFF" stroke="#333333" rx="14"/>
+  <text x="30" y="85" class="small">综合榜</text>
+
+  <rect x="92" y="66" width="72" height="28" fill="#F2F2F2" stroke="#CCCCCC" rx="14"/>
+  <text x="110" y="85" class="small">男生榜</text>
+
+  <rect x="172" y="66" width="72" height="28" fill="#F2F2F2" stroke="#CCCCCC" rx="14"/>
+  <text x="190" y="85" class="small">女生榜</text>
+
+  <rect x="252" y="66" width="72" height="28" fill="#F2F2F2" stroke="#CCCCCC" rx="14"/>
+  <text x="270" y="85" class="small">新作榜</text>
+
+  <!-- Filter row -->
+  <rect x="0" y="104" width="375" height="40" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <text x="16" y="130" class="small">周期: 本周 ▼</text>
+  <text x="280" y="130" class="small">排序: 人气 ▼</text>
+
+  <!-- Ranking List -->
+  <rect x="0" y="144" width="375" height="1200" fill="#FFFFFF" stroke="#DDDDDD"/>
+
+  <!-- Rank Item 1 -->
+  <rect x="12" y="156" width="351" height="92" fill="#FFFFFF" stroke="#EEEEEE" rx="8"/>
+  <text x="24" y="212" class="rank">1</text>
+  <rect x="52" y="168" width="64" height="80" fill="#FFFFFF" stroke="#CCCCCC" rx="4"/>
+  <text x="124" y="188" class="label">漫画标题 Title 1</text>
+  <text x="124" y="208" class="small">人气 1.2亿 · 更新至 128 话</text>
+
+  <!-- Rank Item 2 -->
+  <rect x="12" y="256" width="351" height="92" fill="#FFFFFF" stroke="#EEEEEE" rx="8"/>
+  <text x="24" y="312" class="rank">2</text>
+  <rect x="52" y="268" width="64" height="80" fill="#FFFFFF" stroke="#CCCCCC" rx="4"/>
+  <text x="124" y="288" class="label">漫画标题 Title 2</text>
+  <text x="124" y="308" class="small">人气 9800万 · 更新至 96 话</text>
+
+  <!-- Rank Item 3 -->
+  <rect x="12" y="356" width="351" height="92" fill="#FFFFFF" stroke="#EEEEEE" rx="8"/>
+  <text x="24" y="412" class="rank">3</text>
+  <rect x="52" y="368" width="64" height="80" fill="#FFFFFF" stroke="#CCCCCC" rx="4"/>
+  <text x="124" y="388" class="label">漫画标题 Title 3</text>
+  <text x="124" y="408" class="small">人气 8500万 · 更新至 110 话</text>
+
+  <!-- Load more -->
+  <rect x="112" y="1320" width="150" height="36" fill="#FFFFFF" stroke="#333333" rx="18"/>
+  <text x="187" y="1342" text-anchor="middle" class="small">加载更多</text>
+</svg>

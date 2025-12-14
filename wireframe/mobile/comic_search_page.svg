@@ -1,0 +1,62 @@
+<svg width="375" height="1500" viewBox="0 0 375 1500" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .h1 { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #333; }
+    .label { font-family: Arial, sans-serif; font-size: 12px; fill: #555; }
+    .small { font-family: Arial, sans-serif; font-size: 11px; fill: #777; }
+    .chip { fill:#F5F5F5; stroke:#CCCCCC; }
+    .active { fill:#FFFFFF; stroke:#333333; }
+  </style>
+
+  <rect width="375" height="1500" fill="#F7F7F7"/>
+
+  <!-- Sticky search header -->
+  <rect x="0" y="0" width="375" height="104" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <text x="12" y="34" class="small">←</text>
+  <text x="188" y="34" text-anchor="middle" class="h1">搜索 / Search</text>
+
+  <rect x="12" y="56" width="285" height="36" fill="#FFFFFF" stroke="#CCCCCC" rx="18"/>
+  <text x="24" y="79" class="small">Search...</text>
+  <rect x="305" y="56" width="58" height="36" fill="#FFFFFF" stroke="#333333" rx="18"/>
+  <text x="322" y="79" class="small">搜</text>
+
+  <!-- Autocomplete / Suggestions area (state) -->
+  <rect x="12" y="108" width="351" height="160" fill="#FFFFFF" stroke="#DDDDDD" rx="10"/>
+  <text x="24" y="136" class="label">Suggestions</text>
+  <text x="24" y="160" class="small">• keyword suggestion 1</text>
+  <text x="24" y="182" class="small">• keyword suggestion 2</text>
+  <text x="24" y="204" class="small">• comic title suggestion</text>
+  <text x="24" y="226" class="small">• author suggestion</text>
+
+  <!-- Type tabs + filter chips (scroll) -->
+  <rect x="0" y="280" width="375" height="64" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <rect x="12" y="296" width="72" height="32" class="active" rx="16"/>
+  <text x="32" y="317" class="small">漫画</text>
+  <rect x="92" y="296" width="72" height="32" class="chip" rx="16"/>
+  <text x="112" y="317" class="small">作者</text>
+  <rect x="172" y="296" width="72" height="32" class="chip" rx="16"/>
+  <text x="192" y="317" class="small">标签</text>
+
+  <rect x="252" y="296" width="111" height="32" class="chip" rx="16"/>
+  <text x="270" y="317" class="small">筛选 ▼</text>
+
+  <!-- Results list -->
+  <rect x="0" y="344" width="375" height="1100" fill="#FFFFFF" stroke="#DDDDDD"/>
+
+  <!-- Result item 1 -->
+  <rect x="12" y="360" width="351" height="100" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+  <rect x="24" y="372" width="70" height="86" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+  <text x="104" y="394" class="label">Title 1</text>
+  <text x="104" y="416" class="small">热血 · 连载 · 更新至 128</text>
+  <text x="104" y="438" class="small">人气 1.2亿</text>
+
+  <!-- Result item 2 -->
+  <rect x="12" y="472" width="351" height="100" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+  <rect x="24" y="484" width="70" height="86" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+  <text x="104" y="506" class="label">Title 2</text>
+  <text x="104" y="528" class="small">恋爱 · 完结 · 96 话</text>
+  <text x="104" y="550" class="small">人气 9800万</text>
+
+  <!-- Load more -->
+  <rect x="112" y="1400" width="150" height="36" fill="#FFFFFF" stroke="#333333" rx="18"/>
+  <text x="187" y="1422" text-anchor="middle" class="small">加载更多</text>
+</svg>
