@@ -31,8 +31,8 @@ export default function ComicCard({
   };
 
   return (
-    <Link 
-      href={`/${locale}/comic/${comic.slug}`}
+    <Link
+      href={`/comic/${comic.slug}`}
       className="group block"
     >
       <div className="flex flex-col">

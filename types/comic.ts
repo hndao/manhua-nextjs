@@ -30,6 +30,7 @@ export interface Page {
 export interface Chapter {
   id: number;
   comic_id: number;
+  slug: string;
   title: string;
   chapter_number: number;
   volume_number?: number;

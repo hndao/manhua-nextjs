@@ -41,15 +41,15 @@ export function formatRelativeTime(dateString: string): string {
 }
 
 /**
- * Format date to display format
+ * Format date to display format (consistent across server/client)
+ * Returns format: DD/MM/YYYY
  */
 export function formatDate(dateString: string): string {
   const date = new Date(dateString);
-  return date.toLocaleDateString('zh-CN', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  });
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
 }
 
 /**

@@ -11,9 +11,9 @@ export default function Header() {
   const locale = useLocale();
 
   const switchLocale = (newLocale: Locale) => {
-    const currentPath = window.location.pathname;
-    const pathWithoutLocale = currentPath.replace(`/${locale}`, '');
-    window.location.href = `/${newLocale}${pathWithoutLocale}`;
+    const url = new URL(window.location.href);
+    url.searchParams.set('locale', newLocale);
+    window.location.href = url.toString();
   };
 
   const navItems = [
@@ -42,7 +42,7 @@ export default function Header() {
               {navItems.map((item) => (
                 <Link
                   key={item.href}
-                  href={`/${locale}${item.href}`}
+                  href={item.href}
                   className="text-sm text-gray-700 hover:text-gray-900 transition-colors"
                 >
                   {t(item.labelKey)}
@@ -118,7 +118,7 @@ export default function Header() {
               {navItems.map((item) => (
                 <Link
                   key={item.href}
-                  href={`/${locale}${item.href}`}
+                  href={item.href}
                   className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50"
                   onClick={() => setIsMenuOpen(false)}
                 >

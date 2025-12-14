@@ -62,7 +62,7 @@ export default function Banner({ comics, autoPlayInterval = 5000 }: BannerProps)
                 index === currentIndex ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              <Link href={`/${locale}/comic/${comic.slug}`}>
+              <Link href={`/comic/${comic.slug}`}>
                 <div className="relative h-full w-full">
                   <Image
                     src={comic.banner_image || comic.cover_image || getPlaceholderImage(1440, 320)}

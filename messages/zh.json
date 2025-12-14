@@ -15,7 +15,10 @@
     "loadMore": "加载更多",
     "viewAll": "查看全部",
     "hot": "热门",
-    "new": "新"
+    "new": "新",
+    "showMore": "显示更多",
+    "showLess": "收起",
+    "back": "返回"
   },
   "nav": {
     "home": "首页",
@@ -56,14 +59,27 @@
     "rating": "评分",
     "ratings": "评分",
     "description": "简介",
+    "introduction": "简介",
     "startReading": "开始阅读",
     "continueReading": "继续阅读",
     "addBookmark": "加入书签",
     "removeBookmark": "移除书签",
+    "bookmark": "书签",
     "share": "分享",
     "report": "举报",
     "latestChapter": "最新章节",
-    "firstChapter": "第一章"
+    "firstChapter": "第一章",
+    "chapterList": "章节列表",
+    "sortOrder": "排序",
+    "ascending": "升序",
+    "descending": "降序",
+    "loadMore": "加载更多",
+    "youMayLike": "猜你喜欢",
+    "totalChapters": "{count} 章节",
+    "totalViews": "{count} 浏览",
+    "totalRatings": "{count} 评分",
+    "releaseDate": "发布日期",
+    "noChapters": "暂无章节"
   },
   "status": {
     "ongoing": "连载中",
@@ -89,7 +105,14 @@
     "brightness": "亮度",
     "nightMode": "夜间模式",
     "dayMode": "日间模式",
-    "reportIssue": "举报"
+    "reportIssue": "举报",
+    "loading": "加载中...",
+    "loadingChapter": "正在加载章节...",
+    "errorLoading": "加载章节时出错",
+    "noPages": "本章节暂无页面",
+    "pageOf": "第 {current} / {total} 页",
+    "settings": "设置",
+    "autoScroll": "自动滚动"
   },
   "user": {
     "myBookmarks": "我的书签",
@@ -107,6 +130,7 @@
     "copyright": "© 2025 漫画阅读器。保留所有权利。"
   },
   "time": {
+    "updated": "更新",
     "justNow": "刚刚",
     "minutesAgo": "{minutes}分钟前",
     "hoursAgo": "{hours}小时前",

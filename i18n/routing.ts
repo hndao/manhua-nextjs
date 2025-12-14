@@ -8,8 +8,8 @@ export const routing = defineRouting({
   // Used when no locale matches
   defaultLocale: 'vi',
 
-  // Always use locale prefix
-  localePrefix: 'always',
+  // Use query parameter instead of path prefix
+  localePrefix: 'never',
 });
 
 // Lightweight wrappers around Next.js' navigation APIs

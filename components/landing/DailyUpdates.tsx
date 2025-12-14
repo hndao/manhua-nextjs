@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 import { Comic } from '@/types/comic';
 import { getPlaceholderImage } from '@/lib/utils/image';
+import { formatDate } from '@/lib/utils/format';
 
 interface DailyUpdatesProps {
   comics: Comic[];
@@ -65,7 +66,7 @@ export default function DailyUpdates({ comics }: DailyUpdatesProps) {
                 {/* Updated Date */}
                 <div className="mt-2">
                   <span className="text-xs text-gray-400">
-                    {t('time.updated')} {new Date(comic.updated_at).toLocaleDateString()}
+                    {t('time.updated')} {formatDate(comic.updated_at)}
                   </span>
                 </div>
 

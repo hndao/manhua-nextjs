@@ -15,7 +15,10 @@
     "loadMore": "Load More",
     "viewAll": "View All",
     "hot": "HOT",
-    "new": "NEW"
+    "new": "NEW",
+    "showMore": "Show More",
+    "showLess": "Show Less",
+    "back": "Back"
   },
   "nav": {
     "home": "Home",
@@ -56,14 +59,27 @@
     "rating": "Rating",
     "ratings": "Ratings",
     "description": "Description",
+    "introduction": "Introduction",
     "startReading": "Start Reading",
     "continueReading": "Continue Reading",
     "addBookmark": "Add to Bookmarks",
     "removeBookmark": "Remove from Bookmarks",
+    "bookmark": "Bookmark",
     "share": "Share",
     "report": "Report",
     "latestChapter": "Latest Chapter",
-    "firstChapter": "First Chapter"
+    "firstChapter": "First Chapter",
+    "chapterList": "Chapter List",
+    "sortOrder": "Sort Order",
+    "ascending": "Ascending",
+    "descending": "Descending",
+    "loadMore": "Load More",
+    "youMayLike": "You May Like",
+    "totalChapters": "{count} chapters",
+    "totalViews": "{count} views",
+    "totalRatings": "{count} ratings",
+    "releaseDate": "Release Date",
+    "noChapters": "No chapters available"
   },
   "status": {
     "ongoing": "Ongoing",
@@ -89,7 +105,14 @@
     "brightness": "Brightness",
     "nightMode": "Night Mode",
     "dayMode": "Day Mode",
-    "reportIssue": "Report Issue"
+    "reportIssue": "Report Issue",
+    "loading": "Loading...",
+    "loadingChapter": "Loading chapter...",
+    "errorLoading": "Error loading chapter",
+    "noPages": "No pages available for this chapter",
+    "pageOf": "Page {current} / {total}",
+    "settings": "Settings",
+    "autoScroll": "Auto Scroll"
   },
   "user": {
     "myBookmarks": "My Bookmarks",
@@ -107,6 +130,7 @@
     "copyright": "© 2025 Manhua Reader. All rights reserved."
   },
   "time": {
+    "updated": "Updated",
     "justNow": "Just now",
     "minutesAgo": "{minutes} minutes ago",
     "hoursAgo": "{hours} hours ago",

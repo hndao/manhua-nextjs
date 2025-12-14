@@ -17,7 +17,7 @@ export async function getChapter(id: number): Promise<Chapter> {
  * GET /chapters/{id}/pages - Get all pages for a chapter
  */
 export async function getChapterPages(id: number): Promise<Page[]> {
-  const response = await apiClient.get<Page[]>(`/chapters/${id}/pages`);
-  return response.data;
+  const response = await apiClient.get<ApiResponse<Page[]>>(`/chapters/${id}/pages`);
+  return response.data.data;
 }
 

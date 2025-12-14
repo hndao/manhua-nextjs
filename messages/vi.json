@@ -15,7 +15,10 @@
     "loadMore": "Xem thêm",
     "viewAll": "Xem tất cả",
     "hot": "HOT",
-    "new": "MỚI"
+    "new": "MỚI",
+    "showMore": "Xem thêm",
+    "showLess": "Thu gọn",
+    "back": "Quay lại"
   },
   "nav": {
     "home": "Trang chủ",
@@ -56,14 +59,27 @@
     "rating": "Đánh giá",
     "ratings": "Đánh giá",
     "description": "Mô tả",
+    "introduction": "Giới thiệu",
     "startReading": "Bắt đầu đọc",
     "continueReading": "Đọc tiếp",
     "addBookmark": "Thêm vào đánh dấu",
     "removeBookmark": "Xóa khỏi đánh dấu",
+    "bookmark": "Đánh dấu",
     "share": "Chia sẻ",
     "report": "Báo cáo",
     "latestChapter": "Chương mới nhất",
-    "firstChapter": "Chương đầu"
+    "firstChapter": "Chương đầu",
+    "chapterList": "Danh sách chương",
+    "sortOrder": "Thứ tự",
+    "ascending": "Tăng dần",
+    "descending": "Giảm dần",
+    "loadMore": "Tải thêm",
+    "youMayLike": "Có thể bạn thích",
+    "totalChapters": "{count} chương",
+    "totalViews": "{count} lượt xem",
+    "totalRatings": "{count} đánh giá",
+    "releaseDate": "Ngày phát hành",
+    "noChapters": "Chưa có chương nào"
   },
   "status": {
     "ongoing": "Đang tiến hành",
@@ -89,7 +105,14 @@
     "brightness": "Độ sáng",
     "nightMode": "Chế độ ban đêm",
     "dayMode": "Chế độ ban ngày",
-    "reportIssue": "Báo cáo vấn đề"
+    "reportIssue": "Báo cáo vấn đề",
+    "loading": "Đang tải...",
+    "loadingChapter": "Đang tải chương...",
+    "errorLoading": "Lỗi khi tải chương",
+    "noPages": "Chương này chưa có trang nào",
+    "pageOf": "Trang {current} / {total}",
+    "settings": "Cài đặt",
+    "autoScroll": "Tự động cuộn"
   },
   "user": {
     "myBookmarks": "Đánh dấu của tôi",
@@ -107,6 +130,7 @@
     "copyright": "© 2025 Đọc Truyện Tranh. Bảo lưu mọi quyền."
   },
   "time": {
+    "updated": "Cập nhật",
     "justNow": "Vừa xong",
     "minutesAgo": "{minutes} phút trước",
     "hoursAgo": "{hours} giờ trước",

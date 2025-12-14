@@ -27,7 +27,7 @@ export default function Footer() {
               <div className="flex flex-wrap gap-4 text-xs text-gray-600">
                 {footerLinks.map((link, index) => (
                   <span key={link.href}>
-                    <Link href={`/${locale}${link.href}`} className="hover:text-gray-900">
+                    <Link href={link.href} className="hover:text-gray-900">
                       {t(link.labelKey)}
                     </Link>
                     {index < footerLinks.length - 1 && (
