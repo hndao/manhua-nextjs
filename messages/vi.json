@@ -18,14 +18,13 @@
     "new": "MỚI",
     "showMore": "Xem thêm",
     "showLess": "Thu gọn",
-    "back": "Quay lại"
+    "back": "Quay lại",
+    "details": "Chi tiết"
   },
   "nav": {
     "home": "Trang chủ",
     "rankings": "Bảng xếp hạng",
     "genres": "Thể loại",
-    "news": "Tin tức",
-    "ipZone": "Khu vực IP",
     "login": "Đăng nhập",
     "logout": "Đăng xuất",
     "register": "Đăng ký",
@@ -93,10 +92,43 @@
     "completed": "Đã hoàn thành"
   },
   "rankings": {
+    "title": "Bảng Xếp Hạng",
     "overall": "Tổng hợp",
     "male": "Nam",
     "female": "Nữ",
-    "new": "Mới"
+    "new": "Mới",
+    "tabs": {
+      "popular": "Phổ Biến Nhất",
+      "topRated": "Đánh Giá Cao",
+      "newReleases": "Mới Phát Hành"
+    },
+    "rank": "Hạng",
+    "views": "lượt xem",
+    "rating": "đánh giá",
+    "chapters": "chương",
+    "updated": "Cập nhật",
+    "noComics": "Không tìm thấy truyện",
+    "noMoreComics": "Không còn truyện nào",
+    "loadingError": "Không thể tải bảng xếp hạng",
+    "more": "Xếp Hạng Khác",
+    "filters": {
+      "thisWeek": "Tuần Này",
+      "thisMonth": "Tháng Này",
+      "allTime": "Mọi Lúc",
+      "byPopularity": "Theo Phổ Biến",
+      "byRating": "Theo Đánh Giá",
+      "byLatest": "Mới Nhất",
+      "allCategories": "Tất Cả Thể Loại",
+      "action": "Hành Động",
+      "romance": "Lãng Mạn",
+      "fantasy": "Kỳ Ảo",
+      "onlyOngoing": "Chỉ Đang Tiến Hành",
+      "onlyCompleted": "Chỉ Hoàn Thành"
+    },
+    "sidebar": {
+      "hotTags": "Thẻ Nổi Bật",
+      "recentlyUpdated": "Cập Nhật Gần Đây"
+    }
   },
   "comic": {
     "status": "Trạng thái",

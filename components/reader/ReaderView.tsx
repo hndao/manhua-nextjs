@@ -73,8 +73,8 @@ export default function ReaderView({ chapter, pages }: ReaderViewProps) {
   const nextChapter = currentChapterIndex < chapters.length - 1 ? chapters[currentChapterIndex + 1] : null;
 
   return (
-    <div 
-      className={`min-h-screen ${isDarkMode ? 'bg-gray-900' : 'bg-gray-100'} transition-colors`}
+    <div
+      className={`min-h-screen ${isDarkMode ? 'bg-gray-900' : 'bg-white'} transition-colors`}
       style={{ filter: `brightness(${brightness}%)` }}
     >
       {/* Header */}

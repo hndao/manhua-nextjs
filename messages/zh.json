@@ -18,14 +18,13 @@
     "new": "新",
     "showMore": "显示更多",
     "showLess": "收起",
-    "back": "返回"
+    "back": "返回",
+    "details": "详情"
   },
   "nav": {
     "home": "首页",
     "rankings": "排行榜",
     "genres": "分类",
-    "news": "漫说",
-    "ipZone": "IP专区",
     "login": "登录",
     "logout": "退出",
     "register": "注册",
@@ -93,10 +92,43 @@
     "completed": "已完结"
   },
   "rankings": {
+    "title": "排行榜",
     "overall": "综合榜",
     "male": "男生榜",
     "female": "女生榜",
-    "new": "新作榜"
+    "new": "新作榜",
+    "tabs": {
+      "popular": "最受欢迎",
+      "topRated": "最高评分",
+      "newReleases": "最新发布"
+    },
+    "rank": "排名",
+    "views": "阅读",
+    "rating": "评分",
+    "chapters": "章节",
+    "updated": "更新",
+    "noComics": "未找到漫画",
+    "noMoreComics": "没有更多漫画",
+    "loadingError": "无法加载排行榜",
+    "more": "更多榜单",
+    "filters": {
+      "thisWeek": "本周",
+      "thisMonth": "本月",
+      "allTime": "全部",
+      "byPopularity": "按人气",
+      "byRating": "按评分",
+      "byLatest": "最新",
+      "allCategories": "全部题材",
+      "action": "热血",
+      "romance": "恋爱",
+      "fantasy": "奇幻",
+      "onlyOngoing": "只看连载",
+      "onlyCompleted": "只看完结"
+    },
+    "sidebar": {
+      "hotTags": "热门题材",
+      "recentlyUpdated": "近期更新"
+    }
   },
   "comic": {
     "status": "状态",

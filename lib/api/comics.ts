@@ -78,9 +78,45 @@ export async function getHotComics(per_page: number = 12): Promise<Comic[]> {
  * Get recently updated comics
  */
 export async function getRecentlyUpdated(per_page: number = 10): Promise<Comic[]> {
-  const response = await getComics({ 
+  const response = await getComics({
     per_page,
     sort_by: 'updated_at',
+    sort_order: 'desc'
+  });
+  return response.data;
+}
+
+/**
+ * Get top comics by views (Most Popular)
+ */
+export async function getTopByViews(per_page: number = 50): Promise<Comic[]> {
+  const response = await getComics({
+    per_page,
+    sort_by: 'total_views',
+    sort_order: 'desc'
+  });
+  return response.data;
+}
+
+/**
+ * Get top comics by rating (Top Rated)
+ */
+export async function getTopByRating(per_page: number = 50): Promise<Comic[]> {
+  const response = await getComics({
+    per_page,
+    sort_by: 'average_rating',
+    sort_order: 'desc'
+  });
+  return response.data;
+}
+
+/**
+ * Get newest comics (New Releases)
+ */
+export async function getNewestComics(per_page: number = 50): Promise<Comic[]> {
+  const response = await getComics({
+    per_page,
+    sort_by: 'created_at',
     sort_order: 'desc'
   });
   return response.data;

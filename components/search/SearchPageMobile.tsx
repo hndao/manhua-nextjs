@@ -26,7 +26,7 @@ export default function SearchPageMobile({
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Sticky Search Header */}
       <div className="sticky top-0 z-10 bg-white border-b border-gray-200">
         <div className="px-3 py-3 flex items-center gap-3">

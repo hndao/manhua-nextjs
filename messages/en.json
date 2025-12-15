@@ -18,14 +18,13 @@
     "new": "NEW",
     "showMore": "Show More",
     "showLess": "Show Less",
-    "back": "Back"
+    "back": "Back",
+    "details": "Details"
   },
   "nav": {
     "home": "Home",
     "rankings": "Rankings",
     "genres": "Genres",
-    "news": "News",
-    "ipZone": "IP Zone",
     "login": "Login",
     "logout": "Logout",
     "register": "Register",
@@ -93,10 +92,43 @@
     "completed": "Completed"
   },
   "rankings": {
+    "title": "Rankings",
     "overall": "Overall",
     "male": "Male",
     "female": "Female",
-    "new": "New"
+    "new": "New",
+    "tabs": {
+      "popular": "Most Popular",
+      "topRated": "Top Rated",
+      "newReleases": "New Releases"
+    },
+    "rank": "Rank",
+    "views": "views",
+    "rating": "rating",
+    "chapters": "chapters",
+    "updated": "Updated",
+    "noComics": "No comics found",
+    "noMoreComics": "No more comics",
+    "loadingError": "Failed to load rankings",
+    "more": "More Rankings",
+    "filters": {
+      "thisWeek": "This Week",
+      "thisMonth": "This Month",
+      "allTime": "All Time",
+      "byPopularity": "By Popularity",
+      "byRating": "By Rating",
+      "byLatest": "By Latest",
+      "allCategories": "All Categories",
+      "action": "Action",
+      "romance": "Romance",
+      "fantasy": "Fantasy",
+      "onlyOngoing": "Only Ongoing",
+      "onlyCompleted": "Only Completed"
+    },
+    "sidebar": {
+      "hotTags": "Hot Tags",
+      "recentlyUpdated": "Recently Updated"
+    }
   },
   "comic": {
     "status": "Status",

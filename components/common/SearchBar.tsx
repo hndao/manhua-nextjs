@@ -76,9 +76,9 @@ export default function SearchBar({ variant = 'desktop', className = '' }: Searc
   };
 
   const inputClasses = {
-    mobile: 'w-full px-4 py-2 text-sm border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500',
-    tablet: 'w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500',
-    desktop: 'w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500',
+    mobile: 'w-full px-4 py-2 text-sm text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-500',
+    tablet: 'w-full px-4 py-2 text-sm text-gray-900 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-500',
+    desktop: 'w-full px-4 py-2 text-sm text-gray-900 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-500',
   };
 
   return (

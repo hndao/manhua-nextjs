@@ -11,6 +11,9 @@ export {
   getFeaturedComics,
   getHotComics,
   getRecentlyUpdated,
+  getTopByViews,
+  getTopByRating,
+  getNewestComics,
 } from '@/lib/api/comics';
 
 export {

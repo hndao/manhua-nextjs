@@ -29,15 +29,16 @@
   --spacing-card: 1rem;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Removed dark mode preference - always use light mode */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  background: var(--background);
+  background: #ffffff;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;

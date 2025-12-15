@@ -25,7 +25,7 @@ export default async function ComicPage({ params }: ComicPageProps) {
     const recommendedComics = recommendedComicsData.data;
 
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-white">
         {/* Comic Info Section */}
         <ComicInfo comic={comic} />
 

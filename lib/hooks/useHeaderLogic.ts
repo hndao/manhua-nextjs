@@ -26,8 +26,6 @@ export function useHeaderLogic() {
     { labelKey: 'nav.home', href: '/' },
     { labelKey: 'nav.rankings', href: '/rankings' },
     { labelKey: 'nav.genres', href: '/genres' },
-    { labelKey: 'nav.news', href: '/news' },
-    { labelKey: 'nav.ipZone', href: '/ip' },
   ];
 
   return {

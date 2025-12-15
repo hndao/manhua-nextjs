@@ -25,8 +25,8 @@ export default function SearchPageDesktop({
   const t = useTranslations();
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-[1440px] mx-auto px-10">
+    <div className="min-h-screen bg-white py-8">
+      <div className="container-responsive">
         {/* Page Title */}
         <h1 className="text-2xl font-bold text-gray-900 mb-6">
           {t('search.results')}
