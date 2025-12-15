@@ -46,10 +46,22 @@ export async function getComicChapters(
 /**
  * GET /search - Search comics by title, description, or author
  */
-export async function searchComics(query: string): Promise<Comic[]> {
-  const response = await apiClient.get<ApiResponse<Comic[]>>('/search', {
-    params: { q: query },
-  });
+export async function searchComics(
+  query: string,
+  filters?: {
+    status?: string;
+    genre?: string;
+    sort_by?: string;
+  }
+): Promise<Comic[]> {
+  const params: Record<string, string> = {};
+
+  if (query) params.q = query;
+  if (filters?.status) params.status = filters.status;
+  if (filters?.genre) params.genre = filters.genre;
+  if (filters?.sort_by) params.sort_by = filters.sort_by;
+
+  const response = await apiClient.get<ApiResponse<Comic[]>>('/search', { params });
   return response.data.data;
 }
 
@@ -89,36 +101,78 @@ export async function getRecentlyUpdated(per_page: number = 10): Promise<Comic[]
 /**
  * Get top comics by views (Most Popular)
  */
-export async function getTopByViews(per_page: number = 50): Promise<Comic[]> {
-  const response = await getComics({
+export async function getTopByViews(
+  per_page: number = 50,
+  status?: 'all' | 'ongoing' | 'completed',
+  genre?: string
+): Promise<Comic[]> {
+  const params: GetComicsParams = {
     per_page,
     sort_by: 'total_views',
     sort_order: 'desc'
-  });
+  };
+
+  if (status && status !== 'all') {
+    params.status = status;
+  }
+
+  if (genre && genre !== 'all') {
+    params.genre = genre;
+  }
+
+  const response = await getComics(params);
   return response.data;
 }
 
 /**
  * Get top comics by rating (Top Rated)
  */
-export async function getTopByRating(per_page: number = 50): Promise<Comic[]> {
-  const response = await getComics({
+export async function getTopByRating(
+  per_page: number = 50,
+  status?: 'all' | 'ongoing' | 'completed',
+  genre?: string
+): Promise<Comic[]> {
+  const params: GetComicsParams = {
     per_page,
     sort_by: 'average_rating',
     sort_order: 'desc'
-  });
+  };
+
+  if (status && status !== 'all') {
+    params.status = status;
+  }
+
+  if (genre && genre !== 'all') {
+    params.genre = genre;
+  }
+
+  const response = await getComics(params);
   return response.data;
 }
 
 /**
  * Get newest comics (New Releases)
  */
-export async function getNewestComics(per_page: number = 50): Promise<Comic[]> {
-  const response = await getComics({
+export async function getNewestComics(
+  per_page: number = 50,
+  status?: 'all' | 'ongoing' | 'completed',
+  genre?: string
+): Promise<Comic[]> {
+  const params: GetComicsParams = {
     per_page,
     sort_by: 'created_at',
     sort_order: 'desc'
-  });
+  };
+
+  if (status && status !== 'all') {
+    params.status = status;
+  }
+
+  if (genre && genre !== 'all') {
+    params.genre = genre;
+  }
+
+  const response = await getComics(params);
   return response.data;
 }
 

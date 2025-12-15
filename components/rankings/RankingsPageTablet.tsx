@@ -10,12 +10,22 @@ interface RankingsPageTabletProps {
   activeTab: 'popular' | 'topRated' | 'newReleases';
   comics: Comic[];
   onTabChange: (tab: 'popular' | 'topRated' | 'newReleases') => void;
+  statusFilter: 'all' | 'ongoing' | 'completed';
+  genreFilter: string;
+  onStatusFilterChange: (status: 'all' | 'ongoing' | 'completed') => void;
+  onGenreFilterChange: (genre: string) => void;
+  isLoading?: boolean;
 }
 
 export default function RankingsPageTablet({
   activeTab,
   comics,
   onTabChange,
+  statusFilter,
+  genreFilter,
+  onStatusFilterChange,
+  onGenreFilterChange,
+  isLoading = false,
 }: RankingsPageTabletProps) {
   const t = useTranslations();
   const [period, setPeriod] = useState('week');

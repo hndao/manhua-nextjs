@@ -33,8 +33,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
     } catch (error) {
       console.error('Failed to load user:', error);
-      // Clear invalid token
+      // Clear invalid tokens from both localStorage and cookies
       localStorage.removeItem('auth_token');
+      localStorage.removeItem('refresh_token');
+      document.cookie = 'auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax';
+      document.cookie = 'refresh_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax';
       setUser(null);
     } finally {
       setIsLoading(false);

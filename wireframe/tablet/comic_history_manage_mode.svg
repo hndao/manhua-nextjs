@@ -1,0 +1,61 @@
+<svg width="768" height="1450" viewBox="0 0 768 1450" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .h1{font-family:Arial,sans-serif;font-size:18px;font-weight:bold;fill:#333}
+    .h2{font-family:Arial,sans-serif;font-size:15px;font-weight:bold;fill:#333}
+    .label{font-family:Arial,sans-serif;font-size:12px;fill:#555}
+    .small{font-family:Arial,sans-serif;font-size:11px;fill:#777}
+    .btn{fill:#FFFFFF;stroke:#333333}
+    .danger{fill:#FFFFFF;stroke:#CC3333}
+    .muted{fill:#F5F5F5;stroke:#CCCCCC}
+  </style>
+
+  <rect width="768" height="1450" fill="#F7F7F7"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="768" height="64" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <text x="24" y="40" class="small">←</text>
+  <text x="384" y="40" text-anchor="middle" class="h1">History（管理）</text>
+  <text x="720" y="40" class="small">完成</text>
+
+  <!-- Sticky action bar -->
+  <rect x="24" y="80" width="720" height="56" fill="#FFFFFF" stroke="#DDDDDD" rx="10"/>
+  <rect x="40" y="100" width="16" height="16" fill="#FFFFFF" stroke="#333333" rx="3"/>
+  <text x="64" y="112" class="small">全选</text>
+  <text x="120" y="112" class="small">已选: 2</text>
+
+  <rect x="500" y="92" width="120" height="36" class="danger" rx="18"/>
+  <text x="532" y="114" class="small" fill="#CC3333">删除</text>
+
+  <rect x="628" y="92" width="116" height="36" class="muted" rx="18"/>
+  <text x="656" y="114" class="small">清空</text>
+
+  <!-- List -->
+  <rect x="24" y="150" width="720" height="1250" fill="#FFFFFF" stroke="#DDDDDD" rx="10"/>
+  <text x="44" y="190" class="h2">今天</text>
+
+  <!-- Row selected -->
+  <rect x="44" y="210" width="680" height="100" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+  <rect x="60" y="252" width="16" height="16" fill="#FFFFFF" stroke="#333333" rx="3"/>
+  <path d="M62 260 L66 264 L73 255" stroke="#333333" stroke-width="2" fill="none"/>
+  <rect x="86" y="222" width="64" height="80" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+  <text x="162" y="244" class="label">Title A</text>
+  <text x="162" y="264" class="small">第 128 话 • 65%</text>
+  <text x="162" y="284" class="small">10:30</text>
+
+  <!-- Row selected -->
+  <rect x="44" y="320" width="680" height="100" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+  <rect x="60" y="362" width="16" height="16" fill="#FFFFFF" stroke="#333333" rx="3"/>
+  <path d="M62 370 L66 374 L73 365" stroke="#333333" stroke-width="2" fill="none"/>
+  <rect x="86" y="332" width="64" height="80" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+  <text x="162" y="354" class="label">Title B</text>
+  <text x="162" y="374" class="small">第 66 话 • 20%</text>
+  <text x="162" y="394" class="small">09:10</text>
+
+  <!-- Row not selected -->
+  <rect x="44" y="430" width="680" height="100" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+  <rect x="60" y="472" width="16" height="16" fill="#FFFFFF" stroke="#333333" rx="3"/>
+  <rect x="86" y="442" width="64" height="80" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+  <text x="162" y="464" class="label">Title C</text>
+  <text x="162" y="484" class="small">第 12 话 • 5%</text>
+  <text x="162" y="504" class="small">08:20</text>
+</svg>

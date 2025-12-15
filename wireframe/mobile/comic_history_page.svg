@@ -1,0 +1,45 @@
+<svg width="375" height="1450" viewBox="0 0 375 1450" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .h1{font-family:Arial,sans-serif;font-size:16px;font-weight:bold;fill:#333}
+    .h2{font-family:Arial,sans-serif;font-size:13px;font-weight:bold;fill:#333}
+    .label{font-family:Arial,sans-serif;font-size:12px;fill:#555}
+    .small{font-family:Arial,sans-serif;font-size:11px;fill:#777}
+    .chip{fill:#F5F5F5;stroke:#CCCCCC}
+    .btn{fill:#FFFFFF;stroke:#333333}
+  </style>
+  <rect width="375" height="1450" fill="#F7F7F7"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="375" height="56" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <text x="12" y="34" class="small">←</text>
+  <text x="188" y="34" text-anchor="middle" class="h1">历史记录</text>
+  <text x="340" y="34" class="small">管理</text>
+
+  <!-- Toolbar -->
+  <rect x="0" y="56" width="375" height="52" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <rect x="12" y="68" width="150" height="28" class="chip" rx="14"/>
+  <text x="24" y="86" class="small">最近30天 ▼</text>
+  <rect x="170" y="68" width="120" height="28" class="chip" rx="14"/>
+  <text x="182" y="86" class="small">最近阅读 ▼</text>
+  <rect x="300" y="68" width="63" height="28" class="btn" rx="14"/>
+  <text x="318" y="86" class="small">清空</text>
+
+  <!-- List -->
+  <rect x="0" y="108" width="375" height="1280" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <text x="12" y="140" class="h2">今天</text>
+
+  <rect x="12" y="154" width="351" height="96" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+  <rect x="24" y="166" width="64" height="80" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+  <text x="100" y="188" class="label">Title A</text>
+  <text x="100" y="208" class="small">第 128 话 • 65%</text>
+  <text x="100" y="228" class="small">10:30</text>
+
+  <rect x="12" y="260" width="351" height="96" fill="#FFFFFF" stroke="#EEEEEE" rx="10"/>
+  <rect x="24" y="272" width="64" height="80" fill="#FFFFFF" stroke="#CCCCCC" rx="6"/>
+  <text x="100" y="294" class="label">Title B</text>
+  <text x="100" y="314" class="small">第 66 话 • 20%</text>
+  <text x="100" y="334" class="small">09:10</text>
+
+  <text x="12" y="390" class="h2">昨天</text>
+  <text x="12" y="420" class="small">... more rows ...</text>
+</svg>

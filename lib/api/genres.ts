@@ -9,8 +9,8 @@ import { Genre, Comic, PaginatedResponse, ApiResponse } from '@/types/comic';
  * GET /genres - Get all genres with comic counts
  */
 export async function getGenres(): Promise<Genre[]> {
-  const response = await apiClient.get<Genre[]>('/genres');
-  return response.data;
+  const response = await apiClient.get<ApiResponse<Genre[]>>('/genres');
+  return response.data.data;
 }
 
 /**

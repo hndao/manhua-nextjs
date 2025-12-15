@@ -29,10 +29,10 @@ export default function SearchFilters({
 }: SearchFiltersProps) {
   const t = useTranslations();
 
-  const searchTypes: Array<{ value: 'comics' | 'authors' | 'tags'; label: string }> = [
+  const searchTypes: Array<{ value: 'comics' | 'authors' | 'tags'; label: string; disabled?: boolean }> = [
     { value: 'comics', label: t('search.filters.comics') },
-    { value: 'authors', label: t('search.filters.authors') },
-    { value: 'tags', label: t('search.filters.tags') },
+    { value: 'authors', label: t('search.filters.authors'), disabled: true },
+    { value: 'tags', label: t('search.filters.tags'), disabled: true },
   ];
 
   const statuses = [
@@ -63,12 +63,16 @@ export default function SearchFilters({
           {searchTypes.map((type) => (
             <button
               key={type.value}
-              onClick={() => onSearchTypeChange(type.value)}
+              onClick={() => !type.disabled && onSearchTypeChange(type.value)}
+              disabled={type.disabled}
               className={`px-4 py-2 text-sm rounded-full transition-colors ${
                 searchType === type.value
                   ? 'bg-white border-2 border-gray-900 text-gray-900 font-medium'
+                  : type.disabled
+                  ? 'bg-gray-50 border border-gray-200 text-gray-400 cursor-not-allowed'
                   : 'bg-gray-100 border border-gray-300 text-gray-700 hover:bg-gray-200'
               }`}
+              title={type.disabled ? 'Coming soon' : undefined}
             >
               {type.label}
             </button>

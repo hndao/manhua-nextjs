@@ -13,12 +13,18 @@ interface SearchPageClientProps {
   initialQuery: string;
   initialResults: Comic[];
   initialError: boolean;
+  initialStatus?: string;
+  initialGenre?: string;
+  initialSortBy?: string;
 }
 
 export default function SearchPageClient({
   initialQuery,
   initialResults,
   initialError,
+  initialStatus = '',
+  initialGenre = '',
+  initialSortBy = 'relevance',
 }: SearchPageClientProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -30,19 +36,22 @@ export default function SearchPageClient({
 
   // Filter states
   const [searchType, setSearchType] = useState<'comics' | 'authors' | 'tags'>('comics');
-  const [status, setStatus] = useState('');
-  const [genre, setGenre] = useState('');
-  const [sortBy, setSortBy] = useState('relevance');
+  const [status, setStatus] = useState(initialStatus);
+  const [genre, setGenre] = useState(initialGenre);
+  const [sortBy, setSortBy] = useState(initialSortBy);
 
-  // Update when URL changes
+  // Sync state with URL parameters when URL changes
   useEffect(() => {
     const q = searchParams.get('q') || '';
-    if (q !== query) {
-      setQuery(q);
-      // In a real app, you'd fetch new results here
-      // For now, we'll use the initial results
-    }
-  }, [searchParams, query]);
+    const s = searchParams.get('status') || '';
+    const g = searchParams.get('genre') || '';
+    const sort = searchParams.get('sort') || 'relevance';
+
+    setQuery(q);
+    setStatus(s);
+    setGenre(g);
+    setSortBy(sort);
+  }, [searchParams]);
 
   // Save recent searches to localStorage
   useEffect(() => {

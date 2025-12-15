@@ -1,8 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useLocale } from 'next-intl';
 import { Chapter, Page } from '@/types/comic';
+import { updateReadingHistory } from '@/lib/api/user';
+import { useAuth } from '@/lib/contexts/AuthContext';
 import ReaderHeader from './ReaderHeader';
 import ReaderContent from './ReaderContent';
 import ReaderControls from './ReaderControls';
@@ -15,21 +17,53 @@ interface ReaderViewProps {
 
 export default function ReaderView({ chapter, pages }: ReaderViewProps) {
   const locale = useLocale();
+  const { user } = useAuth();
   const [currentPage, setCurrentPage] = useState(0);
   const [showControls, setShowControls] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [brightness, setBrightness] = useState(100);
+  const historyUpdated = useRef(false);
 
-  // Auto-hide controls after 3 seconds of inactivity
+  // Update reading history when component mounts (user starts reading)
   useEffect(() => {
-    if (!showControls) return;
+    const updateHistory = async () => {
+      if (user && chapter.comic && !historyUpdated.current) {
+        try {
+          await updateReadingHistory({
+            comic_id: chapter.comic.id,
+            chapter_id: chapter.id,
+            last_page_read: 0,
+          });
+          historyUpdated.current = true;
+        } catch (error) {
+          console.error('Failed to update reading history:', error);
+        }
+      }
+    };
 
-    const timer = setTimeout(() => {
-      setShowControls(false);
-    }, 3000);
+    updateHistory();
+  }, [user, chapter]);
 
+  // Update reading history when page changes
+  useEffect(() => {
+    const updateHistory = async () => {
+      if (user && chapter.comic && currentPage > 0) {
+        try {
+          await updateReadingHistory({
+            comic_id: chapter.comic.id,
+            chapter_id: chapter.id,
+            last_page_read: currentPage,
+          });
+        } catch (error) {
+          console.error('Failed to update reading history:', error);
+        }
+      }
+    };
+
+    // Debounce the update to avoid too many API calls
+    const timer = setTimeout(updateHistory, 1000);
     return () => clearTimeout(timer);
-  }, [showControls, currentPage]);
+  }, [user, chapter, currentPage]);
 
   // Toggle controls on click/tap
   const handleContentClick = () => {
@@ -37,20 +71,20 @@ export default function ReaderView({ chapter, pages }: ReaderViewProps) {
   };
 
   // Navigate to next page
-  const handleNextPage = () => {
+  const handleNextPage = useCallback(() => {
     if (currentPage < pages.length - 1) {
       setCurrentPage(currentPage + 1);
       setShowControls(true);
     }
-  };
+  }, [currentPage, pages.length]);
 
   // Navigate to previous page
-  const handlePrevPage = () => {
+  const handlePrevPage = useCallback(() => {
     if (currentPage > 0) {
       setCurrentPage(currentPage - 1);
       setShowControls(true);
     }
-  };
+  }, [currentPage]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -78,10 +112,12 @@ export default function ReaderView({ chapter, pages }: ReaderViewProps) {
       style={{ filter: `brightness(${brightness}%)` }}
     >
       {/* Header */}
-      <ReaderHeader 
+      <ReaderHeader
         chapter={chapter}
         show={showControls}
         onToggle={() => setShowControls(!showControls)}
+        prevChapter={prevChapter}
+        nextChapter={nextChapter}
       />
 
       {/* Main Content */}

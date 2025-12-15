@@ -21,6 +21,16 @@
     "back": "Quay lại",
     "details": "Chi tiết"
   },
+  "notFound": {
+    "title": "404 - Không Tìm Thấy Trang",
+    "heading": "Rất tiếc! Không Tìm Thấy Trang",
+    "message": "Trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển.",
+    "suggestions": "Dưới đây là một số liên kết hữu ích:",
+    "goHome": "Về Trang Chủ",
+    "browseComics": "Duyệt Truyện",
+    "viewRankings": "Xem Bảng Xếp Hạng",
+    "searchComics": "Tìm Kiếm Truyện"
+  },
   "nav": {
     "home": "Trang chủ",
     "rankings": "Bảng xếp hạng",
@@ -148,6 +158,10 @@
     "addBookmark": "Thêm vào đánh dấu",
     "removeBookmark": "Xóa khỏi đánh dấu",
     "bookmark": "Đánh dấu",
+    "bookmarked": "Đã đánh dấu",
+    "bookmarkAdded": "Đã thêm vào đánh dấu",
+    "bookmarkRemoved": "Đã xóa khỏi đánh dấu",
+    "totalViews": "{count} lượt xem",
     "share": "Chia sẻ",
     "report": "Báo cáo",
     "latestChapter": "Chương mới nhất",
@@ -229,7 +243,8 @@
     "passwordMinLength": "Tối thiểu 8 ký tự",
     "invalidCredentials": "Email hoặc mật khẩu không đúng",
     "registrationFailed": "Đăng ký thất bại. Vui lòng thử lại.",
-    "passwordMismatch": "Mật khẩu không khớp"
+    "passwordMismatch": "Mật khẩu không khớp",
+    "sessionExpired": "Phiên đăng nhập của bạn đã hết hạn. Vui lòng đăng nhập lại để tiếp tục."
   },
   "footer": {
     "about": "Về chúng tôi",
@@ -255,6 +270,52 @@
     "networkError": "Lỗi mạng. Vui lòng kiểm tra kết nối.",
     "unauthorized": "Vui lòng đăng nhập để tiếp tục",
     "forbidden": "Bạn không có quyền truy cập tài nguyên này"
+  },
+  "genres": {
+    "title": "Tất cả thể loại",
+    "description": "Duyệt truyện theo thể loại",
+    "comicsCount": "{count} truyện",
+    "noGenres": "Không tìm thấy thể loại",
+    "viewComics": "Xem truyện"
+  },
+  "history": {
+    "title": "Lịch sử đọc",
+    "description": "Truyện bạn đã đọc gần đây",
+    "noHistory": "Chưa có lịch sử đọc",
+    "noHistoryDescription": "Bắt đầu đọc truyện để xem chúng ở đây",
+    "lastRead": "Đọc lần cuối",
+    "continueReading": "Tiếp tục đọc",
+    "chapter": "Chương {number}",
+    "page": "Trang {number}",
+    "manage": "Quản lý",
+    "done": "Xong",
+    "selectAll": "Chọn tất cả",
+    "deselectAll": "Bỏ chọn tất cả",
+    "deleteSelected": "Xóa đã chọn",
+    "selectedCount": "Đã chọn {count}",
+    "confirmDelete": "Xóa lịch sử",
+    "confirmDeleteMessage": "Bạn có chắc chắn muốn xóa {count} mục khỏi lịch sử đọc? Hành động này không thể hoàn tác.",
+    "deleteSuccess": "Đã xóa khỏi lịch sử thành công",
+    "deleteError": "Không thể xóa khỏi lịch sử"
+  },
+  "bookmarks": {
+    "title": "Truyện đã lưu",
+    "description": "Truyện yêu thích của bạn",
+    "noBookmarks": "Chưa có truyện đã lưu",
+    "noBookmarksDescription": "Lưu truyện yêu thích để xem chúng ở đây",
+    "addedAt": "Đã thêm {time}",
+    "manage": "Quản lý",
+    "done": "Xong",
+    "selectAll": "Chọn tất cả",
+    "deselectAll": "Bỏ chọn tất cả",
+    "deleteSelected": "Xóa đã chọn",
+    "selectedCount": "Đã chọn {count}",
+    "confirmDelete": "Xóa truyện đã lưu",
+    "confirmDeleteMessage": "Bạn có chắc chắn muốn xóa {count} truyện khỏi danh sách đã lưu? Hành động này không thể hoàn tác.",
+    "deleteSuccess": "Đã xóa khỏi danh sách thành công",
+    "deleteError": "Không thể xóa khỏi danh sách",
+    "addBookmark": "Thêm vào danh sách",
+    "removeBookmark": "Xóa khỏi danh sách"
   }
 }
 

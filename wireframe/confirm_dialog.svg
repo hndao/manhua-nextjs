@@ -1,0 +1,29 @@
+<svg width="800" height="520" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title{font-family:Arial,sans-serif;font-size:16px;font-weight:bold;fill:#333}
+    .text{font-family:Arial,sans-serif;font-size:12px;fill:#666}
+    .btn{font-family:Arial,sans-serif;font-size:12px;fill:#333}
+    .danger{font-family:Arial,sans-serif;font-size:12px;fill:#CC3333}
+  </style>
+
+  <!-- Dim background -->
+  <rect x="0" y="0" width="800" height="520" fill="#000000" opacity="0.35"/>
+
+  <!-- Modal -->
+  <rect x="170" y="150" width="460" height="220" fill="#FFFFFF" stroke="#DDDDDD" rx="12"/>
+
+  <text x="200" y="185" class="title">确认操作 / Confirm</text>
+  <text x="200" y="215" class="text">你确定要删除所选项目吗？此操作不可撤销。</text>
+  <text x="200" y="240" class="text">Are you sure you want to delete selected items? This cannot be undone.</text>
+
+  <!-- Checkbox: don't ask again (optional) -->
+  <rect x="200" y="265" width="16" height="16" fill="#FFFFFF" stroke="#333333" rx="3"/>
+  <text x="224" y="278" class="text">下次不再提示 / Don’t ask again</text>
+
+  <!-- Buttons -->
+  <rect x="290" y="315" width="110" height="36" fill="#F5F5F5" stroke="#CCCCCC" rx="18"/>
+  <text x="330" y="338" class="btn" text-anchor="middle">取消</text>
+
+  <rect x="420" y="315" width="160" height="36" fill="#FFFFFF" stroke="#CC3333" rx="18"/>
+  <text x="500" y="338" class="danger" text-anchor="middle">删除 / Delete</text>
+</svg>

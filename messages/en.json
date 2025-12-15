@@ -21,6 +21,16 @@
     "back": "Back",
     "details": "Details"
   },
+  "notFound": {
+    "title": "404 - Page Not Found",
+    "heading": "Oops! Page Not Found",
+    "message": "The page you're looking for doesn't exist or has been moved.",
+    "suggestions": "Here are some helpful links instead:",
+    "goHome": "Go to Home",
+    "browseComics": "Browse Comics",
+    "viewRankings": "View Rankings",
+    "searchComics": "Search Comics"
+  },
   "nav": {
     "home": "Home",
     "rankings": "Rankings",
@@ -148,6 +158,10 @@
     "addBookmark": "Add to Bookmarks",
     "removeBookmark": "Remove from Bookmarks",
     "bookmark": "Bookmark",
+    "bookmarked": "Bookmarked",
+    "bookmarkAdded": "Added to bookmarks",
+    "bookmarkRemoved": "Removed from bookmarks",
+    "totalViews": "{count} views",
     "share": "Share",
     "report": "Report",
     "latestChapter": "Latest Chapter",
@@ -229,7 +243,8 @@
     "passwordMinLength": "Minimum 8 characters",
     "invalidCredentials": "Invalid email or password",
     "registrationFailed": "Registration failed. Please try again.",
-    "passwordMismatch": "Passwords do not match"
+    "passwordMismatch": "Passwords do not match",
+    "sessionExpired": "Your session has expired. Please login again to continue."
   },
   "footer": {
     "about": "About Us",
@@ -255,6 +270,52 @@
     "networkError": "Network error. Please check your connection.",
     "unauthorized": "Please login to continue",
     "forbidden": "You don't have permission to access this resource"
+  },
+  "genres": {
+    "title": "All Genres",
+    "description": "Browse comics by genre",
+    "comicsCount": "{count} comics",
+    "noGenres": "No genres found",
+    "viewComics": "View Comics"
+  },
+  "history": {
+    "title": "Reading History",
+    "description": "Your recently read comics",
+    "noHistory": "No reading history yet",
+    "noHistoryDescription": "Start reading some comics to see them here",
+    "lastRead": "Last read",
+    "continueReading": "Continue Reading",
+    "chapter": "Chapter {number}",
+    "page": "Page {number}",
+    "manage": "Manage",
+    "done": "Done",
+    "selectAll": "Select All",
+    "deselectAll": "Deselect All",
+    "deleteSelected": "Delete Selected",
+    "selectedCount": "{count} selected",
+    "confirmDelete": "Delete History",
+    "confirmDeleteMessage": "Are you sure you want to delete {count} item(s) from your reading history? This action cannot be undone.",
+    "deleteSuccess": "Successfully deleted from history",
+    "deleteError": "Failed to delete from history"
+  },
+  "bookmarks": {
+    "title": "My Bookmarks",
+    "description": "Your saved comics",
+    "noBookmarks": "No bookmarks yet",
+    "noBookmarksDescription": "Bookmark your favorite comics to see them here",
+    "addedAt": "Added {time}",
+    "manage": "Manage",
+    "done": "Done",
+    "selectAll": "Select All",
+    "deselectAll": "Deselect All",
+    "deleteSelected": "Delete Selected",
+    "selectedCount": "{count} selected",
+    "confirmDelete": "Remove Bookmarks",
+    "confirmDeleteMessage": "Are you sure you want to remove {count} comic(s) from your bookmarks? This action cannot be undone.",
+    "deleteSuccess": "Successfully removed from bookmarks",
+    "deleteError": "Failed to remove from bookmarks",
+    "addBookmark": "Add to Bookmarks",
+    "removeBookmark": "Remove from Bookmarks"
   }
 }
 

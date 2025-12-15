@@ -1,0 +1,39 @@
+<svg width="375" height="1450" viewBox="0 0 375 1450" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .h1{font-family:Arial,sans-serif;font-size:16px;font-weight:bold;fill:#333}
+    .label{font-family:Arial,sans-serif;font-size:12px;fill:#555}
+    .small{font-family:Arial,sans-serif;font-size:11px;fill:#777}
+    .chip{fill:#F5F5F5;stroke:#CCCCCC}
+    .active{fill:#FFFFFF;stroke:#333333}
+  </style>
+  <rect width="375" height="1450" fill="#F7F7F7"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="375" height="104" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <text x="12" y="34" class="small">←</text>
+  <text x="188" y="34" text-anchor="middle" class="h1">分类 / Genres</text>
+  <rect x="12" y="56" width="351" height="36" fill="#FFFFFF" stroke="#CCCCCC" rx="18"/>
+  <text x="24" y="79" class="small">Search...</text>
+
+  <!-- Genre chips row -->
+  <rect x="0" y="104" width="375" height="56" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <rect x="12" y="118" width="70" height="28" class="active" rx="14"/><text x="32" y="137" class="small">全部</text>
+  <rect x="90" y="118" width="70" height="28" class="chip" rx="14"/><text x="110" y="137" class="small">热血</text>
+  <rect x="168" y="118" width="70" height="28" class="chip" rx="14"/><text x="188" y="137" class="small">恋爱</text>
+  <rect x="246" y="118" width="70" height="28" class="chip" rx="14"/><text x="266" y="137" class="small">都市</text>
+
+  <!-- Filter button -->
+  <rect x="318" y="118" width="45" height="28" class="chip" rx="14"/>
+  <text x="330" y="137" class="small">筛选</text>
+
+  <!-- Results list (2-col cards) -->
+  <rect x="0" y="160" width="375" height="1180" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <rect x="12" y="176" width="168" height="230" fill="#FFFFFF" stroke="#CCCCCC" rx="10"/><text x="22" y="418" class="small">Title 1</text>
+  <rect x="195" y="176" width="168" height="230" fill="#FFFFFF" stroke="#CCCCCC" rx="10"/><text x="205" y="418" class="small">Title 2</text>
+
+  <rect x="12" y="426" width="168" height="230" fill="#FFFFFF" stroke="#CCCCCC" rx="10"/><text x="22" y="668" class="small">Title 3</text>
+  <rect x="195" y="426" width="168" height="230" fill="#FFFFFF" stroke="#CCCCCC" rx="10"/><text x="205" y="668" class="small">Title 4</text>
+
+  <rect x="112" y="1340" width="150" height="36" fill="#FFFFFF" stroke="#333333" rx="18"/>
+  <text x="187" y="1362" text-anchor="middle" class="small">加载更多</text>
+</svg>

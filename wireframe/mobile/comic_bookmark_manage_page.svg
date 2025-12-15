@@ -1,0 +1,52 @@
+<svg width="375" height="1450" viewBox="0 0 375 1450" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .h1{font-family:Arial,sans-serif;font-size:16px;font-weight:bold;fill:#333}
+    .small{font-family:Arial,sans-serif;font-size:11px;fill:#777}
+    .bar{fill:#FFFFFF;stroke:#DDDDDD}
+    .danger{fill:#FFFFFF;stroke:#CC3333}
+    .btn{fill:#FFFFFF;stroke:#333333}
+  </style>
+
+  <rect width="375" height="1450" fill="#F7F7F7"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="375" height="56" class="bar"/>
+  <text x="12" y="34" class="small">←</text>
+  <text x="188" y="34" text-anchor="middle" class="h1">书架（管理）</text>
+  <text x="330" y="34" class="small">完成</text>
+
+  <!-- Sticky bottom action bar -->
+  <rect x="0" y="1390" width="375" height="60" class="bar"/>
+  <rect x="12" y="1410" width="16" height="16" fill="#FFFFFF" stroke="#333333" rx="3"/>
+  <text x="34" y="1423" class="small">全选</text>
+  <text x="90" y="1423" class="small">已选: 3</text>
+
+  <rect x="190" y="1404" width="90" height="36" class="btn" rx="18"/>
+  <text x="212" y="1427" class="small">移动▼</text>
+
+  <rect x="290" y="1404" width="73" height="36" class="danger" rx="18"/>
+  <text x="309" y="1427" class="small" fill="#CC3333">删除</text>
+
+  <!-- Grid area -->
+  <rect x="0" y="56" width="375" height="1334" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <!-- 2 columns cards -->
+  <rect x="12" y="72" width="168" height="230" fill="#FFFFFF" stroke="#CCCCCC" rx="10"/>
+  <rect x="22" y="82" width="16" height="16" fill="#FFFFFF" stroke="#333333" rx="3"/>
+  <path d="M24 90 L28 94 L35 85" stroke="#333333" stroke-width="2" fill="none"/>
+  <text x="22" y="314" class="small">Title 1</text>
+
+  <rect x="195" y="72" width="168" height="230" fill="#FFFFFF" stroke="#CCCCCC" rx="10"/>
+  <rect x="205" y="82" width="16" height="16" fill="#FFFFFF" stroke="#333333" rx="3"/>
+  <path d="M207 90 L211 94 L218 85" stroke="#333333" stroke-width="2" fill="none"/>
+  <text x="205" y="314" class="small">Title 2</text>
+
+  <rect x="12" y="322" width="168" height="230" fill="#FFFFFF" stroke="#CCCCCC" rx="10"/>
+  <rect x="22" y="332" width="16" height="16" fill="#FFFFFF" stroke="#333333" rx="3"/>
+  <text x="22" y="564" class="small">Title 3</text>
+
+  <rect x="195" y="322" width="168" height="230" fill="#FFFFFF" stroke="#CCCCCC" rx="10"/>
+  <rect x="205" y="332" width="16" height="16" fill="#FFFFFF" stroke="#333333" rx="3"/>
+  <text x="205" y="564" class="small">Title 4</text>
+
+  <text x="12" y="610" class="small">... more cards ...</text>
+</svg>

@@ -21,6 +21,16 @@
     "back": "返回",
     "details": "详情"
   },
+  "notFound": {
+    "title": "404 - 页面未找到",
+    "heading": "哎呀！页面未找到",
+    "message": "您要查找的页面不存在或已被移动。",
+    "suggestions": "以下是一些有用的链接：",
+    "goHome": "返回首页",
+    "browseComics": "浏览漫画",
+    "viewRankings": "查看排行榜",
+    "searchComics": "搜索漫画"
+  },
   "nav": {
     "home": "首页",
     "rankings": "排行榜",
@@ -148,6 +158,10 @@
     "addBookmark": "加入书签",
     "removeBookmark": "移除书签",
     "bookmark": "书签",
+    "bookmarked": "已收藏",
+    "bookmarkAdded": "已加入书签",
+    "bookmarkRemoved": "已移除书签",
+    "totalViews": "{count} 次浏览",
     "share": "分享",
     "report": "举报",
     "latestChapter": "最新章节",
@@ -229,7 +243,8 @@
     "passwordMinLength": "最少8个字符",
     "invalidCredentials": "邮箱或密码错误",
     "registrationFailed": "注册失败。请重试。",
-    "passwordMismatch": "密码不匹配"
+    "passwordMismatch": "密码不匹配",
+    "sessionExpired": "您的会话已过期。请重新登录以继续。"
   },
   "footer": {
     "about": "关于我们",
@@ -255,6 +270,52 @@
     "networkError": "网络错误。请检查您的连接。",
     "unauthorized": "请登录以继续",
     "forbidden": "您没有权限访问此资源"
+  },
+  "genres": {
+    "title": "所有类型",
+    "description": "按类型浏览漫画",
+    "comicsCount": "{count}部漫画",
+    "noGenres": "未找到类型",
+    "viewComics": "查看漫画"
+  },
+  "history": {
+    "title": "阅读历史",
+    "description": "您最近阅读的漫画",
+    "noHistory": "暂无阅读历史",
+    "noHistoryDescription": "开始阅读漫画以在此处查看它们",
+    "lastRead": "上次阅读",
+    "continueReading": "继续阅读",
+    "chapter": "第{number}章",
+    "page": "第{number}页",
+    "manage": "管理",
+    "done": "完成",
+    "selectAll": "全选",
+    "deselectAll": "取消全选",
+    "deleteSelected": "删除所选",
+    "selectedCount": "已选择{count}项",
+    "confirmDelete": "删除历史",
+    "confirmDeleteMessage": "您确定要从阅读历史中删除{count}项吗？此操作无法撤消。",
+    "deleteSuccess": "成功从历史中删除",
+    "deleteError": "无法从历史中删除"
+  },
+  "bookmarks": {
+    "title": "我的收藏",
+    "description": "您保存的漫画",
+    "noBookmarks": "暂无收藏",
+    "noBookmarksDescription": "收藏您喜欢的漫画以在此处查看它们",
+    "addedAt": "{time}添加",
+    "manage": "管理",
+    "done": "完成",
+    "selectAll": "全选",
+    "deselectAll": "取消全选",
+    "deleteSelected": "删除所选",
+    "selectedCount": "已选择{count}项",
+    "confirmDelete": "移除收藏",
+    "confirmDeleteMessage": "您确定要从收藏中移除{count}部漫画吗？此操作无法撤消。",
+    "deleteSuccess": "成功从收藏中移除",
+    "deleteError": "无法从收藏中移除",
+    "addBookmark": "添加到收藏",
+    "removeBookmark": "从收藏中移除"
   }
 }
 

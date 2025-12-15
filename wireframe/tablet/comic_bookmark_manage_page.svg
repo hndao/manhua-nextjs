@@ -1,0 +1,53 @@
+<svg width="768" height="1500" viewBox="0 0 768 1500" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .h1{font-family:Arial,sans-serif;font-size:18px;font-weight:bold;fill:#333}
+    .small{font-family:Arial,sans-serif;font-size:11px;fill:#777}
+    .btn{fill:#FFFFFF;stroke:#333333}
+    .danger{fill:#FFFFFF;stroke:#CC3333}
+    .muted{fill:#F5F5F5;stroke:#CCCCCC}
+  </style>
+
+  <rect width="768" height="1500" fill="#F7F7F7"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="768" height="64" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <text x="24" y="40" class="small">←</text>
+  <text x="384" y="40" text-anchor="middle" class="h1">Bookmarks（管理）</text>
+  <text x="720" y="40" class="small">完成</text>
+
+  <!-- Sticky action bar -->
+  <rect x="24" y="80" width="720" height="56" fill="#FFFFFF" stroke="#DDDDDD" rx="10"/>
+  <rect x="40" y="100" width="16" height="16" fill="#FFFFFF" stroke="#333333" rx="3"/>
+  <text x="64" y="112" class="small">全选</text>
+  <text x="120" y="112" class="small">已选: 3</text>
+
+  <rect x="400" y="92" width="150" height="36" class="btn" rx="18"/>
+  <text x="430" y="114" class="small">移动到 ▼</text>
+
+  <rect x="558" y="92" width="90" height="36" class="danger" rx="18"/>
+  <text x="582" y="114" class="small" fill="#CC3333">删除</text>
+
+  <rect x="656" y="92" width="88" height="36" class="muted" rx="18"/>
+  <text x="676" y="114" class="small">分组</text>
+
+  <!-- Grid -->
+  <rect x="24" y="150" width="720" height="1300" fill="#FFFFFF" stroke="#DDDDDD" rx="10"/>
+
+  <!-- 3 columns cards with checkbox -->
+  <rect x="44" y="170" width="210" height="260" fill="#FFFFFF" stroke="#CCCCCC" rx="10"/>
+  <rect x="54" y="180" width="16" height="16" fill="#FFFFFF" stroke="#333333" rx="3"/>
+  <path d="M56 188 L60 192 L67 183" stroke="#333333" stroke-width="2" fill="none"/>
+  <text x="54" y="445" class="small">Title 1</text>
+
+  <rect x="279" y="170" width="210" height="260" fill="#FFFFFF" stroke="#CCCCCC" rx="10"/>
+  <rect x="289" y="180" width="16" height="16" fill="#FFFFFF" stroke="#333333" rx="3"/>
+  <path d="M291 188 L295 192 L302 183" stroke="#333333" stroke-width="2" fill="none"/>
+  <text x="289" y="445" class="small">Title 2</text>
+
+  <rect x="514" y="170" width="210" height="260" fill="#FFFFFF" stroke="#CCCCCC" rx="10"/>
+  <rect x="524" y="180" width="16" height="16" fill="#FFFFFF" stroke="#333333" rx="3"/>
+  <path d="M526 188 L530 192 L537 183" stroke="#333333" stroke-width="2" fill="none"/>
+  <text x="524" y="445" class="small">Title 3</text>
+
+  <text x="44" y="510" class="small">... more cards ...</text>
+</svg>

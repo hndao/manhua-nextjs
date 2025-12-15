@@ -23,6 +23,14 @@ export async function getBookmarks(): Promise<Bookmark[]> {
 }
 
 /**
+ * GET /bookmarks/{comic_id}/check - Check if comic is bookmarked
+ */
+export async function checkBookmark(comicId: number): Promise<boolean> {
+  const response = await apiClient.get<ApiResponse<{ is_bookmarked: boolean }>>(`/bookmarks/${comicId}/check`);
+  return response.data.data.is_bookmarked;
+}
+
+/**
  * POST /bookmarks/{comic_id} - Add comic to bookmarks
  */
 export async function addBookmark(comicId: number): Promise<void> {
@@ -34,6 +42,17 @@ export async function addBookmark(comicId: number): Promise<void> {
  */
 export async function removeBookmark(comicId: number): Promise<void> {
   await apiClient.delete(`/bookmarks/${comicId}`);
+}
+
+/**
+ * Toggle bookmark status for a comic
+ */
+export async function toggleBookmark(comicId: number, isBookmarked: boolean): Promise<void> {
+  if (isBookmarked) {
+    await removeBookmark(comicId);
+  } else {
+    await addBookmark(comicId);
+  }
 }
 
 /**

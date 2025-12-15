@@ -1,0 +1,31 @@
+<svg width="375" height="1450" viewBox="0 0 375 1450" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .h1{font-family:Arial,sans-serif;font-size:16px;font-weight:bold;fill:#333}
+    .small{font-family:Arial,sans-serif;font-size:11px;fill:#777}
+    .chip{fill:#F5F5F5;stroke:#CCCCCC}
+  </style>
+  <rect width="375" height="1450" fill="#F7F7F7"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="375" height="56" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <text x="12" y="34" class="small">←</text>
+  <text x="188" y="34" text-anchor="middle" class="h1">书架</text>
+  <text x="340" y="34" class="small">管理</text>
+
+  <!-- Toolbar chips -->
+  <rect x="0" y="56" width="375" height="52" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <rect x="12" y="68" width="150" height="28" class="chip" rx="14"/><text x="24" y="86" class="small">分组: 全部 ▼</text>
+  <rect x="170" y="68" width="140" height="28" class="chip" rx="14"/><text x="182" y="86" class="small">排序: 最近 ▼</text>
+  <rect x="318" y="68" width="45" height="28" class="chip" rx="14"/><text x="330" y="86" class="small">＋</text>
+
+  <!-- Grid 2 columns -->
+  <rect x="0" y="108" width="375" height="1280" fill="#FFFFFF" stroke="#DDDDDD"/>
+  <rect x="12" y="124" width="168" height="230" fill="#FFFFFF" stroke="#CCCCCC" rx="10"/><text x="22" y="366" class="small">Title 1</text>
+  <rect x="195" y="124" width="168" height="230" fill="#FFFFFF" stroke="#CCCCCC" rx="10"/><text x="205" y="366" class="small">Title 2</text>
+
+  <rect x="12" y="374" width="168" height="230" fill="#FFFFFF" stroke="#CCCCCC" rx="10"/><text x="22" y="616" class="small">Title 3</text>
+  <rect x="195" y="374" width="168" height="230" fill="#FFFFFF" stroke="#CCCCCC" rx="10"/><text x="205" y="616" class="small">Title 4</text>
+
+  <rect x="112" y="1400" width="150" height="36" fill="#FFFFFF" stroke="#333333" rx="18"/>
+  <text x="187" y="1422" text-anchor="middle" class="small">加载更多</text>
+</svg>

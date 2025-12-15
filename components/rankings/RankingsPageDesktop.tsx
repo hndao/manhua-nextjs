@@ -10,19 +10,27 @@ interface RankingsPageDesktopProps {
   activeTab: 'popular' | 'topRated' | 'newReleases';
   comics: Comic[];
   onTabChange: (tab: 'popular' | 'topRated' | 'newReleases') => void;
+  statusFilter: 'all' | 'ongoing' | 'completed';
+  genreFilter: string;
+  onStatusFilterChange: (status: 'all' | 'ongoing' | 'completed') => void;
+  onGenreFilterChange: (genre: string) => void;
+  isLoading?: boolean;
 }
 
 export default function RankingsPageDesktop({
   activeTab,
   comics,
   onTabChange,
+  statusFilter,
+  genreFilter,
+  onStatusFilterChange,
+  onGenreFilterChange,
+  isLoading = false,
 }: RankingsPageDesktopProps) {
   const t = useTranslations();
   const [period, setPeriod] = useState('week');
   const [sortBy, setSortBy] = useState('popularity');
   const [category, setCategory] = useState('all');
-  const [onlyOngoing, setOnlyOngoing] = useState(false);
-  const [onlyCompleted, setOnlyCompleted] = useState(false);
 
   const tabs = [
     { id: 'popular' as const, label: t('rankings.tabs.popular') },
@@ -101,26 +109,23 @@ export default function RankingsPageDesktop({
           {/* Toggle pills */}
           <button
             onClick={() => {
-              setOnlyOngoing(!onlyOngoing);
-              if (!onlyOngoing) setOnlyCompleted(false);
+              onStatusFilterChange(statusFilter === 'ongoing' ? 'all' : 'ongoing');
             }}
             className={`px-4 py-2 text-sm rounded-full transition-colors ${
-              onlyOngoing
+              statusFilter === 'ongoing'
                 ? 'bg-white border-2 border-gray-900 text-gray-900'
                 : 'bg-gray-100 border border-gray-300 text-gray-700 hover:bg-gray-200'
             }`}
           >
             {t('rankings.filters.onlyOngoing')}
-
           </button>
 
           <button
             onClick={() => {
-              setOnlyCompleted(!onlyCompleted);
-              if (!onlyCompleted) setOnlyOngoing(false);
+              onStatusFilterChange(statusFilter === 'completed' ? 'all' : 'completed');
             }}
             className={`px-4 py-2 text-sm rounded-full transition-colors ${
-              onlyCompleted
+              statusFilter === 'completed'
                 ? 'bg-white border-2 border-gray-900 text-gray-900'
                 : 'bg-gray-100 border border-gray-300 text-gray-700 hover:bg-gray-200'
             }`}
@@ -136,7 +141,14 @@ export default function RankingsPageDesktop({
         <div className="w-[420px] bg-white rounded-lg border border-gray-200 p-6">
           <h2 className="text-lg font-bold text-gray-900 mb-6">Top 10</h2>
           <div className="space-y-4">
-            {top10.length === 0 ? (
+            {isLoading ? (
+              <div className="text-center py-12 text-gray-500">
+                <div className="animate-pulse">
+                  <div className="h-4 bg-gray-200 rounded w-3/4 mx-auto mb-2"></div>
+                  <div className="h-4 bg-gray-200 rounded w-1/2 mx-auto"></div>
+                </div>
+              </div>
+            ) : top10.length === 0 ? (
               <div className="text-center py-12 text-gray-500">
                 {t('rankings.noComics')}
               </div>
@@ -209,7 +221,14 @@ export default function RankingsPageDesktop({
             <h2 className="text-lg font-bold text-gray-900">{t('rankings.more')}</h2>
           </div>
           <div className="space-y-3">
-            {moreComics.length === 0 ? (
+            {isLoading ? (
+              <div className="text-center py-12 text-gray-500">
+                <div className="animate-pulse">
+                  <div className="h-4 bg-gray-200 rounded w-3/4 mx-auto mb-2"></div>
+                  <div className="h-4 bg-gray-200 rounded w-1/2 mx-auto"></div>
+                </div>
+              </div>
+            ) : moreComics.length === 0 ? (
               <div className="text-center py-12 text-gray-500">
                 {t('rankings.noMoreComics')}
               </div>
@@ -266,12 +285,22 @@ export default function RankingsPageDesktop({
           <div className="bg-white rounded-lg border border-gray-200 p-4">
             <h3 className="text-sm font-semibold text-gray-900 mb-3">{t('rankings.sidebar.hotTags')}</h3>
             <div className="flex flex-wrap gap-2">
-              {['Action', 'Romance', 'Fantasy', 'Comedy'].map((tag) => (
+              {[
+                { name: 'Action', slug: 'action' },
+                { name: 'Romance', slug: 'romance' },
+                { name: 'Fantasy', slug: 'fantasy' },
+                { name: 'Comedy', slug: 'comedy' }
+              ].map((tag) => (
                 <button
-                  key={tag}
-                  className="px-3 py-1.5 text-xs bg-gray-100 border border-gray-300 rounded-full hover:bg-gray-200"
+                  key={tag.slug}
+                  onClick={() => onGenreFilterChange(genreFilter === tag.slug ? 'all' : tag.slug)}
+                  className={`px-3 py-1.5 text-xs rounded-full transition-colors ${
+                    genreFilter === tag.slug
+                      ? 'bg-blue-600 text-white border-2 border-blue-600'
+                      : 'text-gray-900 bg-gray-100 border border-gray-300 hover:bg-gray-200'
+                  }`}
                 >
-                  {tag}
+                  {tag.name}
                 </button>
               ))}
             </div>
