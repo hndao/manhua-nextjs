@@ -8,8 +8,8 @@ interface AuthContextType {
   user: User | null;
   isLoading: boolean;
   isAuthenticated: boolean;
-  login: (email: string, password: string) => Promise<void>;
-  register: (name: string, email: string, password: string, password_confirmation: string) => Promise<void>;
+  login: (email: string, password: string, recaptchaToken?: string) => Promise<void>;
+  register: (name: string, email: string, password: string, password_confirmation: string, recaptchaToken?: string) => Promise<void>;
   logout: () => Promise<void>;
   refreshUser: () => Promise<void>;
 }
@@ -44,10 +44,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  const login = async (email: string, password: string) => {
+  const login = async (email: string, password: string, recaptchaToken?: string) => {
     setIsLoading(true);
     try {
-      const response = await authApi.login({ email, password });
+      const response = await authApi.login({ email, password, recaptcha_token: recaptchaToken });
       setUser(response.user);
     } finally {
       setIsLoading(false);
@@ -58,7 +58,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     name: string,
     email: string,
     password: string,
-    password_confirmation: string
+    password_confirmation: string,
+    recaptchaToken?: string
   ) => {
     setIsLoading(true);
     try {
@@ -67,6 +68,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         email,
         password,
         password_confirmation,
+        recaptcha_token: recaptchaToken,
       });
       setUser(response.user);
     } finally {

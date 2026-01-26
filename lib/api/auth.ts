@@ -8,6 +8,7 @@ import { User, ApiResponse } from '@/types/comic';
 export interface LoginCredentials {
   email: string;
   password: string;
+  recaptcha_token?: string;
 }
 
 export interface RegisterData {
@@ -15,6 +16,7 @@ export interface RegisterData {
   email: string;
   password: string;
   password_confirmation: string;
+  recaptcha_token?: string;
 }
 
 export interface AuthResponse {

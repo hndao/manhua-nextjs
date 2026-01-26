@@ -5,12 +5,14 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/lib/contexts/AuthContext';
 import { useTranslations } from 'next-intl';
+import { useRecaptcha } from '@/lib/hooks/useRecaptcha';
 
 export default function LoginPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { login, isLoading } = useAuth();
   const t = useTranslations();
+  const { executeRecaptcha, isLoaded: isRecaptchaLoaded } = useRecaptcha();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -23,13 +25,24 @@ export default function LoginPage() {
     }
   }, [searchParams, t]);
 
+  // Show reCAPTCHA badge on this page
+  useEffect(() => {
+    document.body.setAttribute('data-show-recaptcha', 'true');
+    return () => {
+      document.body.removeAttribute('data-show-recaptcha');
+    };
+  }, []);
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError('');
     setInfoMessage('');
 
     try {
-      await login(email, password);
+      // Execute reCAPTCHA before submitting
+      const recaptchaToken = await executeRecaptcha('login');
+
+      await login(email, password, recaptchaToken);
 
       // Redirect to the page user was trying to access, or home
       const redirectUrl = searchParams.get('redirect') || '/';
@@ -91,11 +104,24 @@ export default function LoginPage() {
 
             <button
               type="submit"
-              disabled={isLoading}
+              disabled={isLoading || !isRecaptchaLoaded}
               className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-medium"
             >
               {isLoading ? t('auth.loggingIn') : t('auth.login')}
             </button>
+
+            {/* reCAPTCHA Badge Info */}
+            <p className="text-xs text-gray-500 text-center mt-2">
+              This site is protected by reCAPTCHA and the Google{' '}
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Privacy Policy
+              </a>{' '}
+              and{' '}
+              <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Terms of Service
+              </a>{' '}
+              apply.
+            </p>
           </form>
 
           <div className="mt-6 text-center">

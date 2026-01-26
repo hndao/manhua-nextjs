@@ -80,3 +80,13 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* Hide reCAPTCHA badge by default */
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
+/* Show reCAPTCHA badge only on login and register pages */
+body[data-show-recaptcha="true"] .grecaptcha-badge {
+  visibility: visible !important;
+}

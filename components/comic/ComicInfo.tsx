@@ -10,6 +10,7 @@ import { getPlaceholderImage } from '@/lib/utils/image';
 import { checkBookmark, toggleBookmark, getUserRating, rateComic } from '@/lib/api/user';
 import { useAuth } from '@/lib/contexts/AuthContext';
 import StarRating from '@/components/common/StarRating';
+import { useRecaptcha } from '@/lib/hooks/useRecaptcha';
 
 interface ComicInfoProps {
   comic: Comic;
@@ -20,6 +21,7 @@ export default function ComicInfo({ comic }: ComicInfoProps) {
   const locale = useLocale();
   const router = useRouter();
   const { user } = useAuth();
+  const { executeRecaptcha } = useRecaptcha();
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [isBookmarkLoading, setIsBookmarkLoading] = useState(false);
   const [bookmarkMessage, setBookmarkMessage] = useState('');
@@ -96,7 +98,10 @@ export default function ComicInfo({ comic }: ComicInfoProps) {
     setRatingMessage('');
 
     try {
-      await rateComic(comic.id, { rating });
+      // Execute reCAPTCHA before submitting rating
+      const recaptchaToken = await executeRecaptcha('rate_comic');
+
+      await rateComic(comic.id, { rating, recaptcha_token: recaptchaToken });
       setUserRating(rating);
 
       // Show success message

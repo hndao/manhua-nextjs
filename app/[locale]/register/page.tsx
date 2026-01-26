@@ -1,15 +1,17 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/lib/contexts/AuthContext';
 import { useTranslations } from 'next-intl';
+import { useRecaptcha } from '@/lib/hooks/useRecaptcha';
 
 export default function RegisterPage() {
   const router = useRouter();
   const { register, isLoading } = useAuth();
   const t = useTranslations();
+  const { executeRecaptcha, isLoaded: isRecaptchaLoaded } = useRecaptcha();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,6 +20,14 @@ export default function RegisterPage() {
   });
   const [errors, setErrors] = useState<Record<string, string[]>>({});
   const [generalError, setGeneralError] = useState('');
+
+  // Show reCAPTCHA badge on this page
+  useEffect(() => {
+    document.body.setAttribute('data-show-recaptcha', 'true');
+    return () => {
+      document.body.removeAttribute('data-show-recaptcha');
+    };
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -45,11 +55,15 @@ export default function RegisterPage() {
     }
 
     try {
+      // Execute reCAPTCHA before submitting
+      const recaptchaToken = await executeRecaptcha('register');
+
       await register(
         formData.name,
         formData.email,
         formData.password,
-        formData.password_confirmation
+        formData.password_confirmation,
+        recaptchaToken
       );
       router.push('/'); // Redirect to home after successful registration
     } catch (err: unknown) {
@@ -157,11 +171,24 @@ export default function RegisterPage() {
 
             <button
               type="submit"
-              disabled={isLoading}
+              disabled={isLoading || !isRecaptchaLoaded}
               className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-medium"
             >
               {isLoading ? t('auth.creatingAccount') : t('auth.register')}
             </button>
+
+            {/* reCAPTCHA Badge Info */}
+            <p className="text-xs text-gray-500 text-center mt-2">
+              This site is protected by reCAPTCHA and the Google{' '}
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Privacy Policy
+              </a>{' '}
+              and{' '}
+              <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Terms of Service
+              </a>{' '}
+              apply.
+            </p>
           </form>
 
           <div className="mt-6 text-center">

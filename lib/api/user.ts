@@ -91,7 +91,7 @@ export async function getUserRating(comicId: number): Promise<{
  */
 export async function rateComic(
   comicId: number,
-  data: { rating: number; review?: string }
+  data: { rating: number; review?: string; recaptcha_token?: string }
 ): Promise<void> {
   await apiClient.post(`/comics/${comicId}/rate`, data);
 }
