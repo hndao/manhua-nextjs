@@ -75,6 +75,18 @@ export async function updateReadingHistory(data: {
 }
 
 /**
+ * GET /comics/{comic_id}/rating - Get user's rating for a comic
+ */
+export async function getUserRating(comicId: number): Promise<{
+  has_rated: boolean;
+  rating: number | null;
+  review?: string;
+}> {
+  const response = await apiClient.get(`/comics/${comicId}/rating`);
+  return response.data.data;
+}
+
+/**
  * POST /comics/{comic_id}/rate - Rate a comic
  */
 export async function rateComic(

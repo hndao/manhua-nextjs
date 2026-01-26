@@ -7,8 +7,9 @@ import { useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import { Comic } from '@/types/comic';
 import { getPlaceholderImage } from '@/lib/utils/image';
-import { checkBookmark, toggleBookmark } from '@/lib/api/user';
+import { checkBookmark, toggleBookmark, getUserRating, rateComic } from '@/lib/api/user';
 import { useAuth } from '@/lib/contexts/AuthContext';
+import StarRating from '@/components/common/StarRating';
 
 interface ComicInfoProps {
   comic: Comic;
@@ -22,26 +23,36 @@ export default function ComicInfo({ comic }: ComicInfoProps) {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [isBookmarkLoading, setIsBookmarkLoading] = useState(false);
   const [bookmarkMessage, setBookmarkMessage] = useState('');
+  const [userRating, setUserRating] = useState<number>(0);
+  const [isRatingLoading, setIsRatingLoading] = useState(false);
+  const [ratingMessage, setRatingMessage] = useState('');
 
   // Get first chapter for "Start Reading" button
   const firstChapter = comic.chapters && comic.chapters.length > 0
     ? comic.chapters[0]
     : null;
 
-  // Check bookmark status on mount
+  // Check bookmark status and user rating on mount
   useEffect(() => {
-    const fetchBookmarkStatus = async () => {
+    const fetchUserData = async () => {
       if (user) {
         try {
+          // Fetch bookmark status
           const status = await checkBookmark(comic.id);
           setIsBookmarked(status);
+
+          // Fetch user rating
+          const ratingData = await getUserRating(comic.id);
+          if (ratingData.has_rated && ratingData.rating) {
+            setUserRating(ratingData.rating);
+          }
         } catch (error) {
-          console.error('Failed to check bookmark status:', error);
+          console.error('Failed to fetch user data:', error);
         }
       }
     };
 
-    fetchBookmarkStatus();
+    fetchUserData();
   }, [user, comic.id]);
 
   const handleBookmarkClick = async () => {
@@ -71,6 +82,37 @@ export default function ComicInfo({ comic }: ComicInfoProps) {
       setTimeout(() => setBookmarkMessage(''), 3000);
     } finally {
       setIsBookmarkLoading(false);
+    }
+  };
+
+  const handleRatingChange = async (rating: number) => {
+    if (!user) {
+      // Redirect to login if not authenticated
+      router.push(`/login?redirect=/comic/${comic.slug}`);
+      return;
+    }
+
+    setIsRatingLoading(true);
+    setRatingMessage('');
+
+    try {
+      await rateComic(comic.id, { rating });
+      setUserRating(rating);
+
+      // Show success message
+      setRatingMessage(t('comic.ratingSubmitted'));
+
+      // Clear message after 3 seconds
+      setTimeout(() => setRatingMessage(''), 3000);
+
+      // Optionally refresh the page to update average rating
+      // router.refresh();
+    } catch (error) {
+      console.error('Failed to submit rating:', error);
+      setRatingMessage(t('comic.ratingError'));
+      setTimeout(() => setRatingMessage(''), 3000);
+    } finally {
+      setIsRatingLoading(false);
     }
   };
 
@@ -175,6 +217,54 @@ export default function ComicInfo({ comic }: ComicInfoProps) {
                   <span>{comic.chapters_count} {t('comic.chapters')}</span>
                 </div>
               )}
+            </div>
+
+            {/* User Rating Section */}
+            <div className="mb-4 md:mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm md:text-base font-medium text-gray-700">
+                    {userRating > 0 ? t('comic.yourRating') : t('comic.rateThisComic')}
+                  </span>
+                  {userRating > 0 && (
+                    <span className="text-sm text-gray-500">
+                      {userRating.toFixed(1)} / 5.0
+                    </span>
+                  )}
+                </div>
+
+                {user ? (
+                  <div className="flex items-center gap-3">
+                    <StarRating
+                      rating={userRating}
+                      onRatingChange={handleRatingChange}
+                      readonly={isRatingLoading}
+                      size="lg"
+                    />
+                    {isRatingLoading && (
+                      <svg className="animate-spin h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                    )}
+                  </div>
+                ) : (
+                  <div className="text-sm text-gray-500">
+                    {t('comic.loginToRate')}
+                  </div>
+                )}
+
+                {/* Rating Message */}
+                {ratingMessage && (
+                  <div className={`p-2 rounded text-sm ${
+                    ratingMessage === t('comic.ratingSubmitted')
+                      ? 'bg-green-50 border border-green-200 text-green-800'
+                      : 'bg-red-50 border border-red-200 text-red-800'
+                  }`}>
+                    {ratingMessage}
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Action Buttons */}

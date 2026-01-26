@@ -176,7 +176,13 @@
     "totalViews": "{count} views",
     "totalRatings": "{count} ratings",
     "releaseDate": "Release Date",
-    "noChapters": "No chapters available"
+    "noChapters": "No chapters available",
+    "rateThisComic": "Rate this comic",
+    "yourRating": "Your rating",
+    "clickToRate": "Click to rate",
+    "ratingSubmitted": "Rating submitted successfully",
+    "ratingError": "Failed to submit rating",
+    "loginToRate": "Login to rate this comic"
   },
   "status": {
     "ongoing": "Ongoing",

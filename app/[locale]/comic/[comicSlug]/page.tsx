@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
+import { cache } from 'react';
 import { getComicBySlug, getComics } from '@/lib/data/api';
 import ComicInfo from '@/components/comic/ComicInfo';
 import ComicDescription from '@/components/comic/ComicDescription';
@@ -12,16 +13,21 @@ interface ComicPageProps {
   }>;
 }
 
+// Cache the comic fetch to avoid duplicate requests between page and metadata
+const getCachedComic = cache(async (slug: string) => {
+  return await getComicBySlug(slug);
+});
+
 export default async function ComicPage({ params }: ComicPageProps) {
   const { comicSlug } = await params;
   const t = await getTranslations();
 
   try {
-    // Fetch comic details by slug
-    const comic = await getComicBySlug(comicSlug);
+    // Fetch comic details by slug (cached)
+    const comic = await getCachedComic(comicSlug);
 
     // Fetch recommended comics (same genres or random)
-    const recommendedComicsData = await getComics({ limit: 6 });
+    const recommendedComicsData = await getComics({ per_page: 6 });
     const recommendedComics = recommendedComicsData.data;
 
     return (
@@ -52,8 +58,9 @@ export async function generateMetadata({ params }: ComicPageProps) {
   const { comicSlug } = await params;
 
   try {
-    const comic = await getComicBySlug(comicSlug);
-    
+    // Use the same cached function to avoid duplicate API calls
+    const comic = await getCachedComic(comicSlug);
+
     return {
       title: `${comic.title} - Manhua Reader`,
       description: comic.description,

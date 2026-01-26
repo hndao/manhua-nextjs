@@ -7,47 +7,41 @@ import Rankings from '@/components/landing/Rankings';
 
 export default async function Home() {
   try {
-    // Fetch data from API in parallel
-    const [
-      featuredComics,
-      editorPicksData,
-      hotComics,
-      dailyUpdates,
-      overallRankings,
-      maleRankings,
-      femaleRankings,
-      newComics,
-    ] = await Promise.all([
-      getComics({ limit: 5 }), // Banner comics
-      getComics({ limit: 6 }), // Editor picks
-      getComics({ limit: 12 }), // Hot serials
-      getComics({ limit: 10 }), // Daily updates
-      getComics({ limit: 5 }), // Overall rankings
-      getComics({ limit: 5 }), // Male rankings
-      getComics({ limit: 5 }), // Female rankings
-      getComics({ limit: 5 }), // New comics
-    ]);
+    // Optimize: Fetch comics once with a larger limit and reuse the data
+    // This reduces 8 API calls to just 1
+    const comicsResponse = await getComics({ per_page: 50, sort_by: 'created_at', sort_order: 'desc' });
+    const allComics = comicsResponse.data;
+
+    // Slice the data for different sections
+    const featuredComics = allComics.slice(0, 5);
+    const editorPicks = allComics.slice(5, 11);
+    const hotSerials = allComics.slice(0, 12);
+    const dailyUpdates = allComics.slice(0, 10);
+    const overallRankings = allComics.slice(0, 5);
+    const maleRankings = allComics.slice(10, 15);
+    const femaleRankings = allComics.slice(15, 20);
+    const newComics = allComics.slice(20, 25);
 
     return (
       <div className="bg-white">
         {/* Banner Section */}
-        <Banner comics={featuredComics.data} />
+        <Banner comics={featuredComics} />
 
         {/* Editor Picks Section */}
-        <EditorPicks comics={editorPicksData.data} />
+        <EditorPicks comics={editorPicks} />
 
         {/* Hot Serials Section */}
-        <HotSerials comics={hotComics.data} />
+        <HotSerials comics={hotSerials} />
 
         {/* Daily Updates Section */}
-        <DailyUpdates comics={dailyUpdates.data} />
+        <DailyUpdates comics={dailyUpdates} />
 
         {/* Rankings Section */}
         <Rankings
-          overall={overallRankings.data}
-          male={maleRankings.data}
-          female={femaleRankings.data}
-          newComics={newComics.data}
+          overall={overallRankings}
+          male={maleRankings}
+          female={femaleRankings}
+          newComics={newComics}
         />
       </div>
     );

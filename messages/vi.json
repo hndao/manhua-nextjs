@@ -176,7 +176,13 @@
     "totalViews": "{count} lượt xem",
     "totalRatings": "{count} đánh giá",
     "releaseDate": "Ngày phát hành",
-    "noChapters": "Chưa có chương nào"
+    "noChapters": "Chưa có chương nào",
+    "rateThisComic": "Đánh giá truyện này",
+    "yourRating": "Đánh giá của bạn",
+    "clickToRate": "Nhấn để đánh giá",
+    "ratingSubmitted": "Đã gửi đánh giá thành công",
+    "ratingError": "Không thể gửi đánh giá",
+    "loginToRate": "Đăng nhập để đánh giá truyện"
   },
   "status": {
     "ongoing": "Đang tiến hành",

@@ -176,7 +176,13 @@
     "totalViews": "{count} 浏览",
     "totalRatings": "{count} 评分",
     "releaseDate": "发布日期",
-    "noChapters": "暂无章节"
+    "noChapters": "暂无章节",
+    "rateThisComic": "为这部漫画评分",
+    "yourRating": "您的评分",
+    "clickToRate": "点击评分",
+    "ratingSubmitted": "评分提交成功",
+    "ratingError": "评分提交失败",
+    "loginToRate": "登录后评分"
   },
   "status": {
     "ongoing": "连载中",
