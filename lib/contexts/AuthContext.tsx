@@ -12,6 +12,7 @@ interface AuthContextType {
   register: (name: string, email: string, password: string, password_confirmation: string, recaptchaToken?: string) => Promise<{ requiresVerification: boolean; email?: string }>;
   logout: () => Promise<void>;
   refreshUser: () => Promise<void>;
+  setUserData: (user: User) => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -118,6 +119,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   };
 
+  const setUserData = (userData: User) => {
+    setUser(userData);
+  };
+
   const value: AuthContextType = {
     user,
     isLoading,
@@ -126,6 +131,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     register,
     logout,
     refreshUser,
+    setUserData,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

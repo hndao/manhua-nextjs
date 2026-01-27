@@ -4,7 +4,7 @@ import ResponsiveContainer from '@/components/responsive/ResponsiveContainer';
 import ComicCardMobile from './card/ComicCardMobile';
 import ComicCardTablet from './card/ComicCardTablet';
 import ComicCardDesktop from './card/ComicCardDesktop';
-import { Comic } from '@/lib/types';
+import { Comic } from '@/types/comic';
 
 interface ComicCardProps {
   comic: Comic;

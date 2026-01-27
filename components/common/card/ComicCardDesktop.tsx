@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Comic } from '@/lib/types';
+import { Comic } from '@/types/comic';
 import { getImageUrl } from '@/lib/utils/image';
 
 interface ComicCardDesktopProps {
@@ -46,8 +46,8 @@ export default function ComicCardDesktop({ comic }: ComicCardDesktopProps) {
           </div>
         )}
 
-        {/* Hot Badge */}
-        {comic.is_hot && (
+        {/* Featured Badge */}
+        {comic.is_featured && (
           <div className="absolute top-3 left-3 px-3 py-1 bg-red-500 text-white text-xs font-bold rounded-full">
             HOT
           </div>
@@ -61,7 +61,7 @@ export default function ComicCardDesktop({ comic }: ComicCardDesktopProps) {
         </h3>
         
         <p className="text-sm text-gray-600 mb-3 line-clamp-1">
-          {comic.author?.name}
+          {comic.authors && comic.authors.length > 0 ? comic.authors[0].name : 'Unknown'}
         </p>
 
         {/* Genres */}
@@ -102,17 +102,17 @@ export default function ComicCardDesktop({ comic }: ComicCardDesktopProps) {
         </div>
 
         {/* Latest Chapter */}
-        {comic.latest_chapter && (
+        {comic.chapters && comic.chapters.length > 0 && (
           <div className="pt-3 border-t border-gray-100">
             <div className="flex items-center justify-between text-sm">
               <span className="text-gray-600">Latest:</span>
               <span className="text-blue-600 font-medium">
-                Chapter {comic.latest_chapter.chapter_number}
+                Chapter {comic.chapters[comic.chapters.length - 1].chapter_number}
               </span>
             </div>
-            {comic.latest_chapter.updated_at && (
+            {comic.chapters[comic.chapters.length - 1].updated_at && (
               <div className="text-xs text-gray-400 mt-1 text-right">
-                {new Date(comic.latest_chapter.updated_at).toLocaleDateString()}
+                {new Date(comic.chapters[comic.chapters.length - 1].updated_at).toLocaleDateString()}
               </div>
             )}
           </div>

@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { verifyEmail, resendVerificationCode } from '@/lib/api/auth';
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth } from '@/lib/contexts/AuthContext';
 
 export default function VerifyEmailPage() {
   const t = useTranslations('auth');
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { login: authLogin } = useAuth();
+  const { setUserData } = useAuth();
 
   const [email, setEmail] = useState('');
   const [code, setCode] = useState(['', '', '', '', '', '']);
@@ -92,7 +92,7 @@ export default function VerifyEmailPage() {
 
       // Update auth context with user data
       if ('user' in response) {
-        authLogin(response.user);
+        setUserData(response.user);
       }
 
       // Redirect to home page after 1 second

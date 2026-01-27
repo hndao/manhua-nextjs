@@ -65,7 +65,7 @@ export default function Banner({ comics, autoPlayInterval = 5000 }: BannerProps)
               <Link href={`/comic/${comic.slug}`}>
                 <div className="relative h-full w-full">
                   <Image
-                    src={comic.banner_image || comic.cover_image || getPlaceholderImage(1440, 320)}
+                    src={comic.cover_image || getPlaceholderImage(1440, 320)}
                     alt={comic.title}
                     fill
                     className="object-cover"

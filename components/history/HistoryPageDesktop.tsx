@@ -182,7 +182,7 @@ export default function HistoryPageDesktop({
                   </Link>
 
                   <p className="text-sm text-gray-600 mt-1">
-                    {t('history.lastRead')}: {formatDate(item.last_read_at)}
+                    {t('history.lastRead')}: {formatDate(item.updated_at)}
                   </p>
 
                   {item.chapter && (

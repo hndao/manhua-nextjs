@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Comic } from '@/lib/types';
+import { Comic } from '@/types/comic';
 import { getImageUrl } from '@/lib/utils/image';
 
 interface ComicCardTabletProps {
@@ -46,7 +46,7 @@ export default function ComicCardTablet({ comic }: ComicCardTabletProps) {
         </h3>
         
         <p className="text-xs text-gray-600 mb-2 line-clamp-1">
-          {comic.author?.name}
+          {comic.authors && comic.authors.length > 0 ? comic.authors[0].name : 'Unknown'}
         </p>
 
         {/* Genres */}
@@ -86,9 +86,9 @@ export default function ComicCardTablet({ comic }: ComicCardTabletProps) {
         </div>
 
         {/* Latest Chapter */}
-        {comic.latest_chapter && (
+        {comic.chapters && comic.chapters.length > 0 && (
           <div className="mt-2 pt-2 border-t border-gray-100 text-xs text-blue-600">
-            Chapter {comic.latest_chapter.chapter_number}
+            Chapter {comic.chapters[comic.chapters.length - 1].chapter_number}
           </div>
         )}
       </div>

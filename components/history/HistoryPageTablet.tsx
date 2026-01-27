@@ -132,7 +132,7 @@ export default function HistoryPageTablet({
                   <Link href={`/comic/${item.comic.slug}`} className="text-base font-semibold text-gray-900 hover:text-blue-600 line-clamp-1">
                     {item.comic.title}
                   </Link>
-                  <p className="text-xs text-gray-600 mt-0.5">{t('history.lastRead')}: {formatDate(item.last_read_at)}</p>
+                  <p className="text-xs text-gray-600 mt-0.5">{t('history.lastRead')}: {formatDate(item.updated_at)}</p>
                   {item.chapter && (
                     <p className="text-xs text-gray-500 mt-0.5">
                       {t('history.chapter', { number: item.chapter.chapter_number })}

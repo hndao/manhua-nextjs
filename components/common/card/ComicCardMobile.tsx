@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Comic } from '@/lib/types';
+import { Comic } from '@/types/comic';
 import { getImageUrl } from '@/lib/utils/image';
 
 interface ComicCardMobileProps {
@@ -39,7 +39,7 @@ export default function ComicCardMobile({ comic }: ComicCardMobileProps) {
         </h3>
         
         <p className="text-xs text-gray-600 mb-2 line-clamp-1">
-          {comic.author?.name}
+          {comic.authors && comic.authors.length > 0 ? comic.authors[0].name : 'Unknown'}
         </p>
 
         <div className="flex items-center gap-2 text-xs text-gray-500">
@@ -64,9 +64,9 @@ export default function ComicCardMobile({ comic }: ComicCardMobileProps) {
         </div>
 
         {/* Latest Chapter */}
-        {comic.latest_chapter && (
+        {comic.chapters && comic.chapters.length > 0 && (
           <div className="mt-2 text-xs text-blue-600">
-            Ch. {comic.latest_chapter.chapter_number}
+            Ch. {comic.chapters[comic.chapters.length - 1].chapter_number}
           </div>
         )}
       </div>

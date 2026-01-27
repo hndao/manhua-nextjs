@@ -132,7 +132,7 @@ export default function HistoryPageMobile({
                   <Link href={`/comic/${item.comic.slug}`} className="text-sm font-semibold text-gray-900 hover:text-blue-600 line-clamp-2">
                     {item.comic.title}
                   </Link>
-                  <p className="text-xs text-gray-600 mt-0.5">{formatDate(item.last_read_at)}</p>
+                  <p className="text-xs text-gray-600 mt-0.5">{formatDate(item.updated_at)}</p>
                   {item.chapter && (
                     <p className="text-xs text-gray-500 mt-0.5">
                       {t('history.chapter', { number: item.chapter.chapter_number })}

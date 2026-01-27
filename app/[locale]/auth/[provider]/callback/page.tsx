@@ -11,7 +11,7 @@ export default function SocialAuthCallbackPage() {
   const params = useParams();
   const searchParams = useSearchParams();
   const t = useTranslations('auth');
-  const { login: authLogin } = useAuth();
+  const { setUserData } = useAuth();
   const [error, setError] = useState('');
   const [processing, setProcessing] = useState(true);
 
@@ -36,7 +36,7 @@ export default function SocialAuthCallbackPage() {
           router.push(`/verify-email?email=${encodeURIComponent(response.email)}`);
         } else if ('user' in response) {
           // Login successful, update auth context
-          authLogin(response.user);
+          setUserData(response.user);
           router.push('/');
         }
       } catch (err: any) {
@@ -47,7 +47,7 @@ export default function SocialAuthCallbackPage() {
     };
 
     handleCallback();
-  }, [params.provider, searchParams, router, authLogin, t]);
+  }, [params.provider, searchParams, router, setUserData, t]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">

@@ -15,10 +15,12 @@ export const localeNames: Record<Locale, string> = {
 
 export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid
-  if (!locales.includes(locale as Locale)) notFound();
+  const validLocale = locale as Locale;
+  if (!locales.includes(validLocale)) notFound();
 
   return {
-    messages: (await import(`./messages/${locale}.json`)).default,
+    locale: validLocale,
+    messages: (await import(`./messages/${validLocale}.json`)).default,
   };
 });
 
