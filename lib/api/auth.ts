@@ -32,6 +32,25 @@ export interface RefreshResponse {
   expires_in: number;
 }
 
+export interface VerificationResponse {
+  email: string;
+  requires_verification: boolean;
+  provider?: string;
+}
+
+export interface VerifyEmailData {
+  email: string;
+  code: string;
+}
+
+export interface ResendVerificationData {
+  email: string;
+}
+
+export interface SocialAuthRedirectResponse {
+  redirect_url: string;
+}
+
 /**
  * Set auth tokens in both localStorage and cookies
  */
@@ -67,13 +86,15 @@ function removeAuthTokens() {
 
 /**
  * POST /register - Register a new user
+ * Returns either AuthResponse (if no verification needed) or VerificationResponse
  */
-export async function register(data: RegisterData): Promise<AuthResponse> {
-  const response = await apiClient.post<ApiResponse<AuthResponse>>('/register', data);
+export async function register(data: RegisterData): Promise<AuthResponse | VerificationResponse> {
+  const response = await apiClient.post<ApiResponse<AuthResponse | VerificationResponse>>('/register', data);
 
-  // Store tokens in localStorage and cookies
-  if (response.data.data.access_token && response.data.data.refresh_token) {
-    setAuthTokens(response.data.data.access_token, response.data.data.refresh_token);
+  // Store tokens in localStorage and cookies only if we got tokens back
+  const responseData = response.data.data as any;
+  if (responseData.access_token && responseData.refresh_token) {
+    setAuthTokens(responseData.access_token, responseData.refresh_token);
   }
 
   return response.data.data;
@@ -81,13 +102,15 @@ export async function register(data: RegisterData): Promise<AuthResponse> {
 
 /**
  * POST /login - Login user
+ * Returns either AuthResponse (if verified) or VerificationResponse (if not verified)
  */
-export async function login(credentials: LoginCredentials): Promise<AuthResponse> {
-  const response = await apiClient.post<ApiResponse<AuthResponse>>('/login', credentials);
+export async function login(credentials: LoginCredentials): Promise<AuthResponse | VerificationResponse> {
+  const response = await apiClient.post<ApiResponse<AuthResponse | VerificationResponse>>('/login', credentials);
 
-  // Store tokens in localStorage and cookies
-  if (response.data.data.access_token && response.data.data.refresh_token) {
-    setAuthTokens(response.data.data.access_token, response.data.data.refresh_token);
+  // Store tokens in localStorage and cookies only if we got tokens back
+  const responseData = response.data.data as any;
+  if (responseData.access_token && responseData.refresh_token) {
+    setAuthTokens(responseData.access_token, responseData.refresh_token);
   }
 
   return response.data.data;
@@ -161,5 +184,59 @@ export function getAuthToken(): string | null {
  */
 export function getRefreshToken(): string | null {
   return localStorage.getItem('refresh_token');
+}
+
+/**
+ * POST /verify-email - Verify email with 6-digit code
+ */
+export async function verifyEmail(data: VerifyEmailData): Promise<AuthResponse> {
+  const response = await apiClient.post<ApiResponse<AuthResponse>>('/verify-email', data);
+
+  // Store tokens in localStorage and cookies
+  if (response.data.data.access_token && response.data.data.refresh_token) {
+    setAuthTokens(response.data.data.access_token, response.data.data.refresh_token);
+  }
+
+  return response.data.data;
+}
+
+/**
+ * POST /resend-verification - Resend verification code
+ */
+export async function resendVerificationCode(data: ResendVerificationData): Promise<void> {
+  await apiClient.post('/resend-verification', data);
+}
+
+/**
+ * GET /auth/{provider} - Get social auth redirect URL
+ */
+export async function getSocialAuthRedirect(provider: 'google' | 'facebook' | 'twitter'): Promise<string> {
+  const response = await apiClient.get<ApiResponse<SocialAuthRedirectResponse>>(`/auth/${provider}`);
+  return response.data.data.redirect_url;
+}
+
+/**
+ * GET /auth/{provider}/callback - Handle social auth callback
+ * This should be called from the callback page with the code from the URL
+ */
+export async function handleSocialAuthCallback(
+  provider: 'google' | 'facebook' | 'twitter',
+  code: string,
+  state?: string
+): Promise<AuthResponse | VerificationResponse> {
+  const params = new URLSearchParams({ code });
+  if (state) params.append('state', state);
+
+  const response = await apiClient.get<ApiResponse<AuthResponse | VerificationResponse>>(
+    `/auth/${provider}/callback?${params.toString()}`
+  );
+
+  // Store tokens in localStorage and cookies only if we got tokens back
+  const responseData = response.data.data as any;
+  if (responseData.access_token && responseData.refresh_token) {
+    setAuthTokens(responseData.access_token, responseData.refresh_token);
+  }
+
+  return response.data.data;
 }
 

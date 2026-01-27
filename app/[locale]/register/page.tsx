@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useAuth } from '@/lib/contexts/AuthContext';
 import { useTranslations } from 'next-intl';
 import { useRecaptcha } from '@/lib/hooks/useRecaptcha';
+import SocialLogin from '@/components/SocialLogin';
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -58,14 +59,20 @@ export default function RegisterPage() {
       // Execute reCAPTCHA before submitting
       const recaptchaToken = await executeRecaptcha('register');
 
-      await register(
+      const result = await register(
         formData.name,
         formData.email,
         formData.password,
         formData.password_confirmation,
         recaptchaToken
       );
-      router.push('/'); // Redirect to home after successful registration
+
+      // Check if email verification is required
+      if (result.requiresVerification && result.email) {
+        router.push(`/verify-email?email=${encodeURIComponent(result.email)}`);
+      } else {
+        router.push('/'); // Redirect to home after successful registration
+      }
     } catch (err: unknown) {
       const error = err as { response?: { data?: { errors?: Record<string, string[]>; message?: string } } };
       if (error.response?.data?.errors) {
@@ -190,6 +197,9 @@ export default function RegisterPage() {
               apply.
             </p>
           </form>
+
+          {/* Social Login */}
+          <SocialLogin onError={setGeneralError} />
 
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">

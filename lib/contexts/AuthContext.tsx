@@ -8,8 +8,8 @@ interface AuthContextType {
   user: User | null;
   isLoading: boolean;
   isAuthenticated: boolean;
-  login: (email: string, password: string, recaptchaToken?: string) => Promise<void>;
-  register: (name: string, email: string, password: string, password_confirmation: string, recaptchaToken?: string) => Promise<void>;
+  login: (email: string, password: string, recaptchaToken?: string) => Promise<{ requiresVerification: boolean; email?: string }>;
+  register: (name: string, email: string, password: string, password_confirmation: string, recaptchaToken?: string) => Promise<{ requiresVerification: boolean; email?: string }>;
   logout: () => Promise<void>;
   refreshUser: () => Promise<void>;
 }
@@ -48,7 +48,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsLoading(true);
     try {
       const response = await authApi.login({ email, password, recaptcha_token: recaptchaToken });
-      setUser(response.user);
+
+      // Check if verification is required
+      if ('requires_verification' in response && response.requires_verification) {
+        return { requiresVerification: true, email: response.email };
+      }
+
+      // Login successful, set user
+      if ('user' in response) {
+        setUser(response.user);
+      }
+      return { requiresVerification: false };
     } finally {
       setIsLoading(false);
     }
@@ -70,7 +80,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         password_confirmation,
         recaptcha_token: recaptchaToken,
       });
-      setUser(response.user);
+
+      // Check if verification is required
+      if ('requires_verification' in response && response.requires_verification) {
+        return { requiresVerification: true, email: response.email };
+      }
+
+      // Registration successful, set user
+      if ('user' in response) {
+        setUser(response.user);
+      }
+      return { requiresVerification: false };
     } finally {
       setIsLoading(false);
     }

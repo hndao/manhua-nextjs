@@ -250,7 +250,30 @@
     "invalidCredentials": "Email hoặc mật khẩu không đúng",
     "registrationFailed": "Đăng ký thất bại. Vui lòng thử lại.",
     "passwordMismatch": "Mật khẩu không khớp",
-    "sessionExpired": "Phiên đăng nhập của bạn đã hết hạn. Vui lòng đăng nhập lại để tiếp tục."
+    "sessionExpired": "Phiên đăng nhập của bạn đã hết hạn. Vui lòng đăng nhập lại để tiếp tục.",
+    "verifyEmail": {
+      "title": "Xác Thực Email",
+      "description": "Chúng tôi đã gửi mã xác thực 6 chữ số đến {email}",
+      "codeLabel": "Nhập Mã Xác Thực",
+      "codeRequired": "Vui lòng nhập mã 6 chữ số",
+      "verify": "Xác Thực Email",
+      "verifying": "Đang xác thực...",
+      "resend": "Gửi Lại Mã",
+      "resending": "Đang gửi...",
+      "resendCountdown": "Gửi lại sau {seconds}s",
+      "success": "Xác thực email thành công! Đang chuyển hướng...",
+      "error": "Mã không hợp lệ hoặc đã hết hạn. Vui lòng thử lại.",
+      "resendSuccess": "Đã gửi lại mã xác thực!",
+      "resendError": "Gửi lại mã thất bại. Vui lòng thử lại.",
+      "expiryNotice": "Mã hết hạn sau 5 phút"
+    },
+    "socialLogin": {
+      "title": "Hoặc tiếp tục với",
+      "google": "Tiếp tục với Google",
+      "facebook": "Tiếp tục với Facebook",
+      "twitter": "Tiếp tục với Twitter",
+      "error": "Đăng nhập mạng xã hội thất bại. Vui lòng thử lại."
+    }
   },
   "footer": {
     "about": "Về chúng tôi",

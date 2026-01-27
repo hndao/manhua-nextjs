@@ -250,7 +250,30 @@
     "invalidCredentials": "Invalid email or password",
     "registrationFailed": "Registration failed. Please try again.",
     "passwordMismatch": "Passwords do not match",
-    "sessionExpired": "Your session has expired. Please login again to continue."
+    "sessionExpired": "Your session has expired. Please login again to continue.",
+    "verifyEmail": {
+      "title": "Verify Your Email",
+      "description": "We've sent a 6-digit verification code to {email}",
+      "codeLabel": "Enter Verification Code",
+      "codeRequired": "Please enter the 6-digit code",
+      "verify": "Verify Email",
+      "verifying": "Verifying...",
+      "resend": "Resend Code",
+      "resending": "Sending...",
+      "resendCountdown": "Resend in {seconds}s",
+      "success": "Email verified successfully! Redirecting...",
+      "error": "Invalid or expired code. Please try again.",
+      "resendSuccess": "Verification code sent successfully!",
+      "resendError": "Failed to resend code. Please try again.",
+      "expiryNotice": "Code expires in 5 minutes"
+    },
+    "socialLogin": {
+      "title": "Or continue with",
+      "google": "Continue with Google",
+      "facebook": "Continue with Facebook",
+      "twitter": "Continue with Twitter",
+      "error": "Social login failed. Please try again."
+    }
   },
   "footer": {
     "about": "About Us",
